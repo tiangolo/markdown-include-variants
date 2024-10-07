@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies
         run: uv sync
       - name: Lint
-        run: uvx bash scripts/lint.sh
+        run: uv run bash scripts/lint.sh
 
   test:
     runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
         run: uv sync
       - run: mkdir coverage
       - name: Test
-        run: uvx bash scripts/test.sh
+        run: uv run bash scripts/test.sh
         env:
           COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}
           CONTEXT: ${{ runner.os }}-py${{ matrix.python-version }}
@@ -98,9 +98,9 @@ jobs:
           merge-multiple: true
       - run: uv sync
       - run: ls -la coverage
-      - run: uvx coverage combine coverage
-      - run: uvx coverage report
-      - run: uvx coverage html --title "Coverage for ${{ github.sha }}"
+      - run: uv run coverage combine coverage
+      - run: uv run coverage report
+      - run: uv run coverage html --title "Coverage for ${{ github.sha }}"
       - name: Store coverage HTML
         uses: actions/upload-artifact@v4
         with:
