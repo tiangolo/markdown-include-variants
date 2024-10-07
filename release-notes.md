@@ -9,6 +9,7 @@
 
 ### Internal
 
+* ⬆ Bump pypa/gh-action-pypi-publish from 1.9.0 to 1.10.3. PR [#1](https://github.com/tiangolo/markdown-include-variants/pull/1) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Tweak labeler GitHub Action. PR [#7](https://github.com/tiangolo/markdown-include-variants/pull/7) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Fix smokeshow setup. PR [#4](https://github.com/tiangolo/markdown-include-variants/pull/4) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Tweak labeler GitHub Action to not change labels on manual labels. PR [#5](https://github.com/tiangolo/markdown-include-variants/pull/5) by [@tiangolo](https://github.com/tiangolo).
