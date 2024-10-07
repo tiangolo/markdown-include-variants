@@ -18,6 +18,7 @@ jobs:
     steps:
     - uses: actions/labeler@v5
       if: ${{ github.event.action != 'labeled' && github.event.action != 'unlabeled' }}
+    - run: echo "Done adding labels"
   # Run this after labeler applied labels
   check-labels:
     needs:
