@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: markdown-include-variants
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Sebastián
+    family-names: Ramírez
+    email: tiangolo@gmail.com
+identifiers:
+repository-code: 'https://github.com/tiangolo/markdown-include-variants'
+url: 'https://github.com/tiangolo/markdown-include-variants'
+abstract: >-
+  markdown-include-variants, expand multiple variants of source examples in Markdown.
+keywords:
+  - markdown
+license: MIT
