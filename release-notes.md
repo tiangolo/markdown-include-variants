@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Docs
+
+* 📝 Update README with mkdocs.yml configs. PR [#6](https://github.com/tiangolo/markdown-include-variants/pull/6) by [@tiangolo](https://github.com/tiangolo).
+
 ### Internal
 
 * 👷 Tweak labeler GitHub Action. PR [#7](https://github.com/tiangolo/markdown-include-variants/pull/7) by [@tiangolo](https://github.com/tiangolo).
