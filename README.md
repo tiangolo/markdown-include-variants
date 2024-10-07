@@ -48,7 +48,7 @@ markdown_extensions:
 
   # Other extensions
   mdx_include:
-  markdown-include-variants:
+  markdown_include_variants:
 ```
 
 The last config is the one specific to this extension, `markdown-include-variants`.
