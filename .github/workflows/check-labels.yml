@@ -8,6 +8,11 @@ on:
       # For label-checker
       - labeled
       - unlabeled
+  workflow_run:
+    workflows:
+      - Add Labels
+    types:
+      - completed
 
 jobs:
   check-labels:

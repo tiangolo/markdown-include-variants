@@ -1,7 +1,7 @@
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal, Union
+from typing import Any, Literal, Union
 
 from markdown import Extension, Markdown
 from markdown.preprocessors import Preprocessor
@@ -304,5 +304,7 @@ class IncludeVariantsExtension(Extension):
         )
 
 
-def makeExtension(*args, **kwargs):  # pragma: no cover
+def makeExtension(
+    *args: Any, **kwargs: Any
+) -> IncludeVariantsExtension:  # pragma: no cover
     return IncludeVariantsExtension(*args, **kwargs)
