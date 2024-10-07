@@ -1,4 +1,4 @@
-name: Check Labels
+name: Labels
 on:
   pull_request_target:
     types:
@@ -8,14 +8,20 @@ on:
       # For label-checker
       - labeled
       - unlabeled
-  workflow_run:
-    workflows:
-      - Add Labels
-    types:
-      - completed
 
 jobs:
+  labeler:
+    if: ${{ github.event.action != 'labeled' && github.event.action != 'unlabeled' }}
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v5
+  # Run this after labeler applied labels
   check-labels:
+    needs:
+      - labeler
     permissions:
       pull-requests: read
     runs-on: ubuntu-latest
