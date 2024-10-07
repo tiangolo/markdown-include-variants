@@ -4,6 +4,7 @@
 
 ### Docs
 
+* 📝 Fix MkDocs config example. PR [#8](https://github.com/tiangolo/markdown-include-variants/pull/8) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Update README with mkdocs.yml configs. PR [#6](https://github.com/tiangolo/markdown-include-variants/pull/6) by [@tiangolo](https://github.com/tiangolo).
 
 ### Internal
