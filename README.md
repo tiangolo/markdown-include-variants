@@ -26,7 +26,36 @@ There are no guarantees about behavior, it is made to suit the needs of these pr
 
 If you're still here it's probably because you are getting involved in one of the projects that use it. 🤓
 
-Here's how it works:
+Here's how it works. 🚀
+
+### Configure Plugin in MkDocs Material
+
+Make sure `mkdocs.yml` has a section with at least these configs:
+
+```yaml
+markdown_extensions:
+  # Python Markdown Extensions
+  pymdownx.highlight:
+  pymdownx.superfences:
+
+  # pymdownx blocks
+  pymdownx.blocks.admonition:
+    types:
+    - tip
+  pymdownx.blocks.details:
+  pymdownx.blocks.tab:
+    alternate_style: True
+
+  # Other extensions
+  mdx_include:
+  markdown-include-variants:
+```
+
+The last config is the one specific to this extension, `markdown-include-variants`.
+
+The other configs are for the extensions that actually render the output, this extension (`markdown-include-variants`) just generates the content to be rendered by those other extensions.
+
+### Workflow
 
 * You add a Python source example to the `docs_src` directory, with the minimum Python version supported by the project, and using the old format without `Annotated`, if that applies, it would be named something like `tutorial001.py`.
 * Copy the file and update it to use `Annotated` (if that applies), and name the file with a "tag" (a prefix) of `an`, like: `tutorial001_an.py`.
