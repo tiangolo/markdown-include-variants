@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies
         run: uv sync
       - name: Lint
-        run: bash scripts/lint.sh
+        run: uvx bash scripts/lint.sh
 
   test:
     runs-on: ubuntu-latest
