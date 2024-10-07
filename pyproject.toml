@@ -1,0 +1,105 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "markdown-include-variants"
+description = "Markdown extension to expand directives to include source example files to also include their variants. Only useful to tiangolo's projets. Don't use it. 😅"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.9"
+authors = [
+    { name = "Sebastián Ramírez", email = "tiangolo@gmail.com" },
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Typing :: Typed",
+]
+dependencies = [
+    "markdown>=3.7",
+]
+[project.urls]
+Homepage = "https://github.com/tiangolo/markdown-include-variants"
+Repository = "https://github.com/tiangolo/markdown-include-variants"
+Issues = "https://github.com/tiangolo/markdown-include-variants/issues"
+Changelog = "https://github.com/tiangolo/markdown-include-variants/release-notes.md"
+
+[tool.hatch.version]
+path = "src/markdown_include_variants/_version.py"
+
+[tool.uv]
+dev-dependencies = [
+    "coverage>=7.6.1",
+    "inline-snapshot>=0.13.3",
+    "mdx-include>=1.4.2",
+    "mypy>=1.11.2",
+    "pymdown-extensions>=10.11.2",
+    "pytest>=8.3.3",
+    "ruff>=0.6.9",
+    "types-markdown>=3.7.0.20240822",
+]
+
+[tool.coverage.run]
+parallel = true
+data_file = "coverage/.coverage"
+source = [
+    "tests",
+    "src"
+]
+context = '${CONTEXT}'
+dynamic_context = "test_function"
+
+[tool.coverage.report]
+show_missing = true
+sort = "-Cover"
+exclude_lines = [
+    "pragma: no cover",
+    "@overload",
+    'if __name__ == "__main__":',
+    "if TYPE_CHECKING:",
+]
+
+[tool.coverage.html]
+show_contexts = true
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_incomplete_defs = false
+disallow_untyped_defs = false
+disallow_untyped_calls = false
+
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+    "W191", # indentation contains tabs
+]
+
+[tool.ruff.lint.per-file-ignores]
+# "__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["markdown"]
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.inline-snapshot]
+# default-flags=["create"]
+# default-flags=["fix"]
