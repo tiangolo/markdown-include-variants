@@ -58,22 +58,22 @@ The other configs are for the extensions that actually render the output, this e
 ### Workflow
 
 * You add a Python source example to the `docs_src` directory, with the minimum Python version supported by the project, and using the old format without `Annotated`, if that applies, it would be named something like `tutorial001.py`.
-* Copy the file and update it to use `Annotated` (if that applies), and name the file with a "tag" (a prefix) of `an`, like: `tutorial001_an.py`.
+* Copy the file and update it to use `Annotated` (if that applies), and name the file with a "tag" (a prefix) of `_an`, like: `tutorial001_an.py`.
 * Run the internal script to generate the variants of the files for superior versions of Python, like `3.9`, `3.10`, etc. (this internal script is in the project itself). This would generate files like `tutorial001_py39.py`, `tutorial001_py310.py`, etc. and `tutorial001_an_py39.py`, `tutorial001_an_py310.py`, etc.
-* In the Markdown file, include the simplest version of the file, using this syntax:
+* In the Markdown file, include the preferred version of the file, using this syntax:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001.py *}
+{* ./docs_src/first_steps/tutorial001_an_py310.py *}
 ```
 
-That will be automatically expanded with [mdx-include](https://github.com/neurobin/mdx_include) to include the recommended version of the file (the highest version of Python, using `Annotated`), and will include the variants below in a collapsed `details` box.
+That will be automatically expanded with [mdx-include](https://github.com/neurobin/mdx_include) to include the other variants below in a collapsed `details` box.
 
 ### Include Lines
 
 To include specific line ranges, use the config `ln`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001.py ln[3:6,8,10:11] *}
+{* ./docs_src/first_steps/tutorial001_an_py310.py ln[3:6,8,10:11] *}
 ```
 
 That will include only:
@@ -95,7 +95,7 @@ If you include specific lines, it will also add another collapsed `details` box 
 You can highlight specific lines using the config `hl`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001.py hl[3,5:7,10] *}
+{* ./docs_src/first_steps/tutorial001_an_py310.py hl[3,5:7,10] *}
 ```
 
 That will highlight:
@@ -113,7 +113,7 @@ So, when deciding which lines to highlight, do that based on the highest version
 You can combine both `ln` and `hl`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001.py ln[3:6,8,10:11] hl[3,5:6,10] *}
+{* ./docs_src/first_steps/tutorial001_an_py310.py ln[3:6,8,10:11] hl[3,5:6,10] *}
 ```
 
 The highlighted lines refer to the source file (for the highest/recommended version), not the final rendered code block.
@@ -137,7 +137,7 @@ print("line 7")
 Using a declaration like this:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001.py ln[5:7] hl[6] *}
+{* ./docs_src/first_steps/tutorial001_an_py310.py ln[5:7] hl[6] *}
 ```
 
 Could render something like:
