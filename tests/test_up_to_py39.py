@@ -9,7 +9,7 @@ from markdown_include_variants import IncludeVariantsExtension
 def test_all_variants_plain():
     input_md = inspect.cleandoc(
         """
-        {* docs_src/up_to_py39/tutorial001.py *}
+        {* docs_src/up_to_py39/tutorial001_an_py39.py *}
         """
     )
 
@@ -49,7 +49,7 @@ def test_all_variants_plain():
 def test_all_variants_ln_hl():
     input_md = inspect.cleandoc(
         """
-        {* docs_src/up_to_py39/tutorial001.py ln[3:5] hl[4:5] *}
+        {* docs_src/up_to_py39/tutorial001_an_py39.py ln[3:5] hl[4:5] *}
         """
     )
 
