@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Refactors
+
+* ♻️ Make the preferred variant the one used in the include. PR [#9](https://github.com/tiangolo/markdown-include-variants/pull/9) by [@tiangolo](https://github.com/tiangolo).
+
 ### Docs
 
 * 📝 Fix MkDocs config example. PR [#8](https://github.com/tiangolo/markdown-include-variants/pull/8) by [@tiangolo](https://github.com/tiangolo).
