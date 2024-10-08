@@ -9,7 +9,7 @@ from markdown_include_variants import IncludeVariantsExtension
 def test_all_variants_plain():
     input_md = inspect.cleandoc(
         """
-        {* docs_src/only_py310/tutorial001.py *}
+        {* docs_src/only_py310/tutorial001_an_py310.py *}
         """
     )
 
