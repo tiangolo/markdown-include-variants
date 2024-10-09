@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Features
+
+* ✨ Add highlight for full file preview. PR [#10](https://github.com/tiangolo/markdown-include-variants/pull/10) by [@tiangolo](https://github.com/tiangolo).
+
 ## 0.0.2
 
 ### Refactors
