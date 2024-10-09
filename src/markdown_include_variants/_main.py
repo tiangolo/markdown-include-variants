@@ -167,6 +167,16 @@ def calculate_includes(
     return lines_groups
 
 
+def generate_hl_string(hl_lines: list[tuple[int, int]]) -> str:
+    hl_lines_strs: list[str] = []
+    for hl_line in hl_lines:
+        if hl_line[0] == hl_line[1]:
+            hl_lines_strs.append(str(hl_line[0]))
+        else:
+            hl_lines_strs.append(f"{hl_line[0]}-{hl_line[1]}")
+    return " ".join(hl_lines_strs)
+
+
 re_line = r"^\{\*\s*(\S+)\s*(.*)\*\}$"
 re_config = r"(\w+)\[([^\]]+)\]"
 
@@ -203,13 +213,7 @@ class IncludeVariantsPreprocessor(Preprocessor):
                         use_hl_lines.extend(info.computed_hl_lines())
                 else:
                     use_hl_lines = highlight_lines
-            use_hl_lines_strs: list[str] = []
-            for hl_line in use_hl_lines:
-                if hl_line[0] == hl_line[1]:
-                    use_hl_lines_strs.append(str(hl_line[0]))
-                else:
-                    use_hl_lines_strs.append(f"{hl_line[0]}-{hl_line[1]}")
-            use_hl_lines_str = " ".join(use_hl_lines_strs)
+            use_hl_lines_str = generate_hl_string(use_hl_lines)
 
             variants = calculate_variants(base_path)
             if len(variants) == 0:
@@ -275,11 +279,15 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 ]
             )
             if include_lines:
+                first_line_full = "```python"
+                if highlight_lines:
+                    hl_lines_full_str = generate_hl_string(highlight_lines)
+                    first_line_full += f' hl_lines="{hl_lines_full_str}"'
                 block_lines.extend(
                     [
                         "//// details | 👀 Full file preview",
                         "",
-                        "```python",
+                        first_line_full,
                         f"{{!{preferred_variant.path}!}}",
                         "```",
                         "",
