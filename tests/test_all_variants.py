@@ -79,7 +79,7 @@ def test_all_variants_ln_hl():
             <p>```</p>
             <p>////</p>
             <p>//// details | 👀 Full file preview</p>
-            <p><code>python
+            <p><code>python hl_lines="4-5"
             {!docs_src/all_variants/tutorial001_an_py310.py!}</code></p>
             <p>////</p>
             <p>///// details | 🤓 Other versions and variants</p>
@@ -151,9 +151,9 @@ def test_all_variants_ln_hl_include():
             <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 1&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 2&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 3&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 4&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 5&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 6&quot;</span><span class="p">)</span>
+            <span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 4&quot;</span><span class="p">)</span>
+            </span><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 5&quot;</span><span class="p">)</span>
+            </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 6&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 7&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 8&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 9&quot;</span><span class="p">)</span>
