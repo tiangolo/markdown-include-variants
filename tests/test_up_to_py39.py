@@ -65,7 +65,7 @@ def test_all_variants_ln_hl():
             <p>```</p>
             <p>////</p>
             <p>//// details | 👀 Full file preview</p>
-            <p><code>python
+            <p><code>python hl_lines="4-5"
             {!docs_src/up_to_py39/tutorial001_an_py39.py!}</code></p>
             <p>////</p>
             <p>///// details | 🤓 Other versions and variants</p>
