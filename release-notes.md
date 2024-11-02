@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* ⬆ Bump pypa/gh-action-pypi-publish from 1.10.3 to 1.11.0. PR [#11](https://github.com/tiangolo/markdown-include-variants/pull/11) by [@dependabot[bot]](https://github.com/apps/dependabot).
+
 ## 0.0.3
 
 ### Features
