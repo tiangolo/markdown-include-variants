@@ -78,10 +78,12 @@ def test_all_variants_ln_hl():
             <h1>Code below omitted 👇</h1>
             <p>```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.10+</p>
             <p><code>python hl_lines="4-5"
             {!docs_src/all_variants/tutorial001_an_py310.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             <p>///// details | 🤓 Other versions and variants</p>
             <p>//// tab | Python 3.9+</p>
             <p><code>python
@@ -147,7 +149,8 @@ def test_all_variants_ln_hl_include():
             <span class="c1"># Code below omitted 👇</span>
             </code></pre></div></p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.10+</p>
             <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 1&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 2&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 3&quot;</span><span class="p">)</span>
@@ -160,6 +163,7 @@ def test_all_variants_ln_hl_include():
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py310 line 10&quot;</span><span class="p">)</span>
             </code></pre></div>
             <p>////</p>
+            <p>/////</p>
             <p>///// details | 🤓 Other versions and variants</p>
             <p>//// tab | Python 3.9+</p>
             <p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an py39 line 1&quot;</span><span class="p">)</span>
