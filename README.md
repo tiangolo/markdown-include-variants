@@ -152,6 +152,16 @@ print("line 7")
 
 Notice that the comment above adds 2 extra lines, and only the desired lines are included, the result is that the actual highlighted line is the rendered line 4, but the source line 6, it's all calculated automatically. 🤓
 
+### Include Only File Preview
+
+If you only want to generate the "File Preview" collapsed details section, without actually including a tab of source files, you can use `ln[0]`:
+
+```markdown
+{* ./docs_src/first_steps/tutorial001_an_py310.py ln[0] *}
+```
+
+This is useful for example at the beginning of a new page, in a recap of the last used file in the previous page.
+
 ## License
 
 This project is licensed under the terms of the [MIT license](https://github.com/tiangolo/markdown-include-variants/blob/main/LICENSE).
