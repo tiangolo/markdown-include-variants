@@ -64,10 +64,12 @@ def test_all_variants_ln_hl():
             <h1>Code below omitted 👇</h1>
             <p>```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.9+</p>
             <p><code>python hl_lines="4-5"
             {!docs_src/up_to_py39/tutorial001_an_py39.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             <p>///// details | 🤓 Other versions and variants</p>
             <p>//// tab | Python 3.8+</p>
             <p><code>python

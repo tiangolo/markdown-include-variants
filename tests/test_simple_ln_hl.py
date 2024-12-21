@@ -31,10 +31,12 @@ def test_simple_ln_hl():
             <h1>Code below omitted 👇</h1>
             <p>```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="1-3"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -63,10 +65,12 @@ def test_simple_ln_hl_middle_block():
             <h1>Code below omitted 👇</h1>
             <p>```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="2-3"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -96,10 +100,12 @@ def test_simple_ln_hl_middle_block_end_block():
             <p>{!docs_src/simple/tutorial001.py[ln:8-10]!}
             ```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="2-3 8-10"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -131,10 +137,12 @@ def test_simple_ln_hl_middle_block_middle_block_end_block():
             <p>{!docs_src/simple/tutorial001.py[ln:8-10]!}
             ```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="2-3 5-6 8-10"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -166,10 +174,12 @@ def test_simple_ln_hl_middle_middle_block_end():
             <p>{!docs_src/simple/tutorial001.py[ln:10-10]!}
             ```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="2 5-6 10"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -200,10 +210,12 @@ def test_simple_ln_hl_first_middle_end():
             <p>{!docs_src/simple/tutorial001.py[ln:10-10]!}
             ```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="1 6-8 10"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -233,10 +245,12 @@ def test_simple_ln_hl_middle_block_end_block_hl_middle_block():
             <p>{!docs_src/simple/tutorial001.py[ln:8-10]!}
             ```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="2"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -266,10 +280,12 @@ def test_simple_ln_hl_middle_block_end_block_hl_end_block():
             <p>{!docs_src/simple/tutorial001.py[ln:7-10]!}
             ```</p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <p><code>python hl_lines="8-9"
             {!docs_src/simple/tutorial001.py!}</code></p>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
@@ -308,7 +324,8 @@ def test_simple_ln_hl_middle_block_end_block_hl_end_block_include():
             </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 10&quot;</span><span class="p">)</span>
             </code></pre></div></p>
             <p>////</p>
-            <p>//// details | 👀 Full file preview</p>
+            <p>///// details | 👀 Full file preview</p>
+            <p>//// tab | Python 3.8+</p>
             <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 1&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 2&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 3&quot;</span><span class="p">)</span>
@@ -321,6 +338,7 @@ def test_simple_ln_hl_middle_block_end_block_hl_end_block_include():
             </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 10&quot;</span><span class="p">)</span>
             </code></pre></div>
             <p>////</p>
+            <p>/////</p>
             """
         )
     )
