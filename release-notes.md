@@ -4,6 +4,7 @@
 
 ### Features
 
+* ✨ Include variant tab in full file preview. PR [#19](https://github.com/tiangolo/markdown-include-variants/pull/19) by [@tiangolo](https://github.com/tiangolo).
 * ✨ Support including only a file preview. PR [#18](https://github.com/tiangolo/markdown-include-variants/pull/18) by [@tiangolo](https://github.com/tiangolo).
 
 ### Internal
