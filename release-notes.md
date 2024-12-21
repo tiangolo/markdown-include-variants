@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Features
+
+* ✨ Support including only a file preview. PR [#18](https://github.com/tiangolo/markdown-include-variants/pull/18) by [@tiangolo](https://github.com/tiangolo).
+
 ### Internal
 
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.10.3 to 1.11.0. PR [#11](https://github.com/tiangolo/markdown-include-variants/pull/11) by [@dependabot[bot]](https://github.com/apps/dependabot).
