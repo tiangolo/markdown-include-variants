@@ -257,7 +257,9 @@ class IncludeVariantsPreprocessor(Preprocessor):
                     internal_block_lines.append(
                         f"{{!{preferred_variant.path}[ln:{line_group[0]}-{line_group[1]}]!}}"
                     )
-                    if i == len(include_lines) - 1 and line_group[1] < len(content_lines):
+                    if i == len(include_lines) - 1 and line_group[1] < len(
+                        content_lines
+                    ):
                         internal_block_lines.extend(
                             [
                                 "",
