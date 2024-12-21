@@ -288,13 +288,17 @@ class IncludeVariantsPreprocessor(Preprocessor):
                     first_line_full += f' hl_lines="{hl_lines_full_str}"'
                 block_lines.extend(
                     [
-                        "//// details | 👀 Full file preview",
+                        "///// details | 👀 Full file preview",
+                        "",
+                        f"//// tab | {preferred_variant.title}",
                         "",
                         first_line_full,
                         f"{{!{preferred_variant.path}!}}",
                         "```",
                         "",
                         "////",
+                        "",
+                        "/////",
                         "",
                     ]
                 )
