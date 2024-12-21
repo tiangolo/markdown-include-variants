@@ -237,47 +237,48 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 internal_block_lines.append(
                     f"{{!{preferred_variant.path}!}}",
                 )
-            for i, line_group in enumerate(include_lines):
-                if i == 0 and line_group[0] > 1:
-                    internal_block_lines.extend(
-                        [
-                            "# Code above omitted 👆",
-                            "",
-                        ]
+            if include_lines != [(0, 0)]:
+                for i, line_group in enumerate(include_lines):
+                    if i == 0 and line_group[0] > 1:
+                        internal_block_lines.extend(
+                            [
+                                "# Code above omitted 👆",
+                                "",
+                            ]
+                        )
+                    if i >= 1:
+                        internal_block_lines.extend(
+                            [
+                                "",
+                                "# Code here omitted 👈",
+                                "",
+                            ]
+                        )
+                    internal_block_lines.append(
+                        f"{{!{preferred_variant.path}[ln:{line_group[0]}-{line_group[1]}]!}}"
                     )
-                if i >= 1:
-                    internal_block_lines.extend(
-                        [
-                            "",
-                            "# Code here omitted 👈",
-                            "",
-                        ]
-                    )
-                internal_block_lines.append(
-                    f"{{!{preferred_variant.path}[ln:{line_group[0]}-{line_group[1]}]!}}"
-                )
-                if i == len(include_lines) - 1 and line_group[1] < len(content_lines):
-                    internal_block_lines.extend(
-                        [
-                            "",
-                            "# Code below omitted 👇",
-                        ]
-                    )
-            first_line = "```python"
-            if use_hl_lines:
-                first_line += f' hl_lines="{use_hl_lines_str}"'
+                    if i == len(include_lines) - 1 and line_group[1] < len(content_lines):
+                        internal_block_lines.extend(
+                            [
+                                "",
+                                "# Code below omitted 👇",
+                            ]
+                        )
+                first_line = "```python"
+                if use_hl_lines:
+                    first_line += f' hl_lines="{use_hl_lines_str}"'
 
-            block_lines.extend(
-                [
-                    f"//// tab | {preferred_variant.title}" "",
-                    first_line,
-                    *internal_block_lines,
-                    "```",
-                    "",
-                    "////",
-                    "",
-                ]
-            )
+                block_lines.extend(
+                    [
+                        f"//// tab | {preferred_variant.title}" "",
+                        first_line,
+                        *internal_block_lines,
+                        "```",
+                        "",
+                        "////",
+                        "",
+                    ]
+                )
             if include_lines:
                 first_line_full = "```python"
                 if highlight_lines:
