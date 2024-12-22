@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* 👷 Publish on release released. PR [#20](https://github.com/tiangolo/markdown-include-variants/pull/20) by [@tiangolo](https://github.com/tiangolo).
+
 ## 0.0.4
 
 ### Features
