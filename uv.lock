@@ -294,7 +294,7 @@ wheels = [
 
 [[package]]
 name = "markdown-include-variants"
-version = "0.0.1"
+version = "0.0.4"
 source = { editable = "." }
 dependencies = [
     { name = "markdown" },
