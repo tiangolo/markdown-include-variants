@@ -2,12 +2,6 @@
 
 ## Latest Changes
 
-### Internal
-
-* ⬆ Bump astral-sh/setup-uv from 3 to 5. PR [#17](https://github.com/tiangolo/markdown-include-variants/pull/17) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump tiangolo/latest-changes from 0.3.1 to 0.3.2. PR [#14](https://github.com/tiangolo/markdown-include-variants/pull/14) by [@dependabot[bot]](https://github.com/apps/dependabot).
-* ⬆ Bump pypa/gh-action-pypi-publish from 1.11.0 to 1.12.3. PR [#16](https://github.com/tiangolo/markdown-include-variants/pull/16) by [@dependabot[bot]](https://github.com/apps/dependabot).
-
 ## 0.0.4
 
 ### Features
@@ -17,6 +11,9 @@
 
 ### Internal
 
+* ⬆ Bump astral-sh/setup-uv from 3 to 5. PR [#17](https://github.com/tiangolo/markdown-include-variants/pull/17) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump tiangolo/latest-changes from 0.3.1 to 0.3.2. PR [#14](https://github.com/tiangolo/markdown-include-variants/pull/14) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump pypa/gh-action-pypi-publish from 1.11.0 to 1.12.3. PR [#16](https://github.com/tiangolo/markdown-include-variants/pull/16) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.10.3 to 1.11.0. PR [#11](https://github.com/tiangolo/markdown-include-variants/pull/11) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.0.3
