@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.0.4
+
 ### Features
 
 * ✨ Include variant tab in full file preview. PR [#19](https://github.com/tiangolo/markdown-include-variants/pull/19) by [@tiangolo](https://github.com/tiangolo).
