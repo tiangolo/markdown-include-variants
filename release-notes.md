@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump pypa/gh-action-pypi-publish from 1.12.3 to 1.12.4. PR [#21](https://github.com/tiangolo/markdown-include-variants/pull/21) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Publish on release released. PR [#20](https://github.com/tiangolo/markdown-include-variants/pull/20) by [@tiangolo](https://github.com/tiangolo).
 
 ## 0.0.4
