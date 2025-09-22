@@ -34,6 +34,13 @@ def test_all_variants_plain():
             <p><code>python
             {!docs_src/all_variants/tutorial001_an.py!}</code>
             ////
+            //// tab | Python 3.11+ - non-Annotated</p>
+            <p>/// tip</p>
+            <p>Prefer to use the <code>Annotated</code> version if possible.</p>
+            <p>///</p>
+            <p><code>python
+            {!docs_src/all_variants/tutorial001_py311.py!}</code>
+            ////
             //// tab | Python 3.10+ - non-Annotated</p>
             <p>/// tip</p>
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
