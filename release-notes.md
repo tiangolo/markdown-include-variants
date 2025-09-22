@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump actions/labeler from 5 to 6. PR [#29](https://github.com/tiangolo/markdown-include-variants/pull/29) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 5 to 6. PR [#27](https://github.com/tiangolo/markdown-include-variants/pull/27) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.12.4 to 1.13.0. PR [#26](https://github.com/tiangolo/markdown-include-variants/pull/26) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/checkout from 4 to 5. PR [#25](https://github.com/tiangolo/markdown-include-variants/pull/25) by [@dependabot[bot]](https://github.com/apps/dependabot).
