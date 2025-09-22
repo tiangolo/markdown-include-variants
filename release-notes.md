@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* ⬆ Bump tiangolo/latest-changes from 0.3.2 to 0.4.0. PR [#23](https://github.com/tiangolo/markdown-include-variants/pull/23) by [@dependabot[bot]](https://github.com/apps/dependabot).
+
 ## 0.0.5
 
 ### Features
