@@ -12,7 +12,7 @@ class Variant:
     path: Path
     title: str
     is_annotated: Union[bool, None]
-    version: Literal["py38", "py39", "py310"]
+    version: Literal["py38", "py39", "py310", "py311"]
 
 
 def remove_suffixes(base_name: str, suffixes: list[str]) -> str:
@@ -25,18 +25,45 @@ def remove_suffixes(base_name: str, suffixes: list[str]) -> str:
 
 def calculate_variants(base_path: Path) -> dict[tuple[str, Union[bool, None]], Variant]:
     preferred_name = base_path.stem
-    base_name = remove_suffixes(preferred_name, ["_an", "_py39", "_py310"])
+    base_name = remove_suffixes(preferred_name, ["_an", "_py39", "_py310", "_py311"])
     base_dir = base_path.parent
     variants: dict[tuple[str, Union[bool, None]], Variant] = {}
     an = "_an"
     py39 = "_py39"
     py310 = "_py310"
+    py311 = "_py311"
+    an_p311_path = base_dir / f"{base_name}{an}{py311}.py"
     an_p310_path = base_dir / f"{base_name}{an}{py310}.py"
     an_p39_path = base_dir / f"{base_name}{an}{py39}.py"
     an_p38_path = base_dir / f"{base_name}{an}.py"
+    p311_path = base_dir / f"{base_name}{py311}.py"
     p310_path = base_dir / f"{base_name}{py310}.py"
     p39_path = base_dir / f"{base_name}{py39}.py"
     p38_path = base_dir / f"{base_name}.py"
+    if an_p311_path.exists():
+        v = Variant(
+            path=an_p311_path,
+            title="Python 3.11+",
+            is_annotated=True,
+            version="py311",
+        )
+        variants[(v.version, v.is_annotated)] = v
+        if p311_path.exists():
+            v = Variant(
+                path=p311_path,
+                title="Python 3.11+ - non-Annotated",
+                is_annotated=False,
+                version="py311",
+            )
+            variants[(v.version, v.is_annotated)] = v
+    elif p311_path.exists():
+        v = Variant(
+            path=p311_path,
+            title="Python 3.11+",
+            is_annotated=None,
+            version="py311",
+        )
+        variants[(v.version, v.is_annotated)] = v
     if an_p310_path.exists():
         v = Variant(
             path=an_p310_path,
@@ -221,7 +248,7 @@ class IncludeVariantsPreprocessor(Preprocessor):
             sorted_variants: list[Variant] = []
             preferred_variant = None
             for an in [True, False, None]:
-                for version in ["py310", "py39", "py38"]:
+                for version in ["py311", "py310", "py39", "py38"]:
                     v = variants.get((version, an))
                     if v:
                         if v.path == base_path:

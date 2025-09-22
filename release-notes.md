@@ -2,6 +2,12 @@
 
 ## Latest Changes
 
+## 0.0.5
+
+### Features
+
+* ✨ Support Python 3.11. PR [#28](https://github.com/tiangolo/markdown-include-variants/pull/28) by [@svlandeg](https://github.com/svlandeg).
+
 ### Internal
 
 * ⬆ Bump astral-sh/setup-uv from 5 to 6. PR [#22](https://github.com/tiangolo/markdown-include-variants/pull/22) by [@dependabot[bot]](https://github.com/apps/dependabot).
