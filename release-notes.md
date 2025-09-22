@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.0.5
+
 ### Features
 
 * ✨ Support Python 3.11. PR [#28](https://github.com/tiangolo/markdown-include-variants/pull/28) by [@svlandeg](https://github.com/svlandeg).
