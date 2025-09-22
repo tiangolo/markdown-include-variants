@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump pypa/gh-action-pypi-publish from 1.12.4 to 1.13.0. PR [#26](https://github.com/tiangolo/markdown-include-variants/pull/26) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/checkout from 4 to 5. PR [#25](https://github.com/tiangolo/markdown-include-variants/pull/25) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/download-artifact from 4 to 5. PR [#24](https://github.com/tiangolo/markdown-include-variants/pull/24) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump tiangolo/latest-changes from 0.3.2 to 0.4.0. PR [#23](https://github.com/tiangolo/markdown-include-variants/pull/23) by [@dependabot[bot]](https://github.com/apps/dependabot).
