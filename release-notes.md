@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump astral-sh/setup-uv from 6 to 7. PR [#31](https://github.com/tiangolo/markdown-include-variants/pull/31) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump tiangolo/issue-manager from 0.5.1 to 0.6.0. PR [#30](https://github.com/tiangolo/markdown-include-variants/pull/30) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/labeler from 5 to 6. PR [#29](https://github.com/tiangolo/markdown-include-variants/pull/29) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/setup-python from 5 to 6. PR [#27](https://github.com/tiangolo/markdown-include-variants/pull/27) by [@dependabot[bot]](https://github.com/apps/dependabot).
