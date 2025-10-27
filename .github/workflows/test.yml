@@ -91,7 +91,7 @@ jobs:
           version: "0.4.15"
           enable-cache: true
       - name: Get coverage files
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           pattern: coverage-*
           path: coverage
