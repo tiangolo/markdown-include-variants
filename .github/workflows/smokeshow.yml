@@ -34,7 +34,7 @@ jobs:
           enable-cache: true
       - name: Install Dependencies
         run: uv sync
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: coverage-html
           path: htmlcov
