@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump actions/checkout from 5 to 6. PR [#34](https://github.com/tiangolo/markdown-include-variants/pull/34) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Upgrade `latest-changes` GitHub Action and pin `actions/checkout@v5`. PR [#35](https://github.com/tiangolo/markdown-include-variants/pull/35) by [@tiangolo](https://github.com/tiangolo).
 * ⬆ Bump actions/upload-artifact from 4 to 5. PR [#32](https://github.com/tiangolo/markdown-include-variants/pull/32) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/download-artifact from 5 to 6. PR [#33](https://github.com/tiangolo/markdown-include-variants/pull/33) by [@dependabot[bot]](https://github.com/apps/dependabot).
