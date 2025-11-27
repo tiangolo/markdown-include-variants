@@ -56,6 +56,35 @@ def calculate_variants(base_path: Path) -> dict[tuple[str, Union[bool, None]], V
     )
 
 
+def calculate_variants_folder(
+    base_path: Path,
+) -> dict[tuple[str, Union[bool, None]], Variant]:
+    file_name = base_path.name
+    folder = base_path.parent
+    base_dir = folder.parent
+    base_name = remove_suffixes(folder.name, SUFFIXES_TO_REMOVE)
+
+    an_p311_path = base_dir / f"{base_name}{AN}{PY311}" / file_name
+    an_p310_path = base_dir / f"{base_name}{AN}{PY310}" / file_name
+    an_p39_path = base_dir / f"{base_name}{AN}{PY39}" / file_name
+    an_p38_path = base_dir / f"{base_name}{AN}" / file_name
+    p311_path = base_dir / f"{base_name}{PY311}" / file_name
+    p310_path = base_dir / f"{base_name}{PY310}" / file_name
+    p39_path = base_dir / f"{base_name}{PY39}" / file_name
+    p38_path = base_dir / f"{base_name}" / file_name
+
+    return _create_variants(
+        an_p311_path=an_p311_path,
+        an_p310_path=an_p310_path,
+        an_p39_path=an_p39_path,
+        an_p38_path=an_p38_path,
+        p311_path=p311_path,
+        p310_path=p310_path,
+        p39_path=p39_path,
+        p38_path=p38_path,
+    )
+
+
 def _create_variants(
     an_p311_path: Path,
     an_p310_path: Path,
@@ -272,6 +301,10 @@ class IncludeVariantsPreprocessor(Preprocessor):
             variants = calculate_variants(base_path)
             if len(variants) == 0:
                 raise FileNotFoundError(f"Could not find any variants for {base_path}")
+            if len(variants) == 1:
+                folder_variants = calculate_variants_folder(base_path)
+                if len(folder_variants) > 1:
+                    variants = folder_variants
             sorted_variants: list[Variant] = []
             preferred_variant = None
             for an in [True, False, None]:
