@@ -6,6 +6,13 @@ from typing import Any, Literal, Union
 from markdown import Extension, Markdown
 from markdown.preprocessors import Preprocessor
 
+AN = "_an"
+PY39 = "_py39"
+PY310 = "_py310"
+PY311 = "_py311"
+
+SUFFIXES_TO_REMOVE = ["_an", "_py39", "_py310", "_py311"]
+
 
 @dataclass(frozen=True)
 class Variant:
@@ -25,21 +32,70 @@ def remove_suffixes(base_name: str, suffixes: list[str]) -> str:
 
 def calculate_variants(base_path: Path) -> dict[tuple[str, Union[bool, None]], Variant]:
     preferred_name = base_path.stem
-    base_name = remove_suffixes(preferred_name, ["_an", "_py39", "_py310", "_py311"])
+    base_name = remove_suffixes(preferred_name, SUFFIXES_TO_REMOVE)
     base_dir = base_path.parent
-    variants: dict[tuple[str, Union[bool, None]], Variant] = {}
-    an = "_an"
-    py39 = "_py39"
-    py310 = "_py310"
-    py311 = "_py311"
-    an_p311_path = base_dir / f"{base_name}{an}{py311}.py"
-    an_p310_path = base_dir / f"{base_name}{an}{py310}.py"
-    an_p39_path = base_dir / f"{base_name}{an}{py39}.py"
-    an_p38_path = base_dir / f"{base_name}{an}.py"
-    p311_path = base_dir / f"{base_name}{py311}.py"
-    p310_path = base_dir / f"{base_name}{py310}.py"
-    p39_path = base_dir / f"{base_name}{py39}.py"
+
+    an_p311_path = base_dir / f"{base_name}{AN}{PY311}.py"
+    an_p310_path = base_dir / f"{base_name}{AN}{PY310}.py"
+    an_p39_path = base_dir / f"{base_name}{AN}{PY39}.py"
+    an_p38_path = base_dir / f"{base_name}{AN}.py"
+    p311_path = base_dir / f"{base_name}{PY311}.py"
+    p310_path = base_dir / f"{base_name}{PY310}.py"
+    p39_path = base_dir / f"{base_name}{PY39}.py"
     p38_path = base_dir / f"{base_name}.py"
+
+    return _create_variants(
+        an_p311_path=an_p311_path,
+        an_p310_path=an_p310_path,
+        an_p39_path=an_p39_path,
+        an_p38_path=an_p38_path,
+        p311_path=p311_path,
+        p310_path=p310_path,
+        p39_path=p39_path,
+        p38_path=p38_path,
+    )
+
+
+def calculate_variants_folder(
+    base_path: Path,
+) -> dict[tuple[str, Union[bool, None]], Variant]:
+    file_name = base_path.name
+    folder = base_path.parent
+    base_dir = folder.parent
+    base_name = remove_suffixes(folder.name, SUFFIXES_TO_REMOVE)
+
+    an_p311_path = base_dir / f"{base_name}{AN}{PY311}" / file_name
+    an_p310_path = base_dir / f"{base_name}{AN}{PY310}" / file_name
+    an_p39_path = base_dir / f"{base_name}{AN}{PY39}" / file_name
+    an_p38_path = base_dir / f"{base_name}{AN}" / file_name
+    p311_path = base_dir / f"{base_name}{PY311}" / file_name
+    p310_path = base_dir / f"{base_name}{PY310}" / file_name
+    p39_path = base_dir / f"{base_name}{PY39}" / file_name
+    p38_path = base_dir / f"{base_name}" / file_name
+
+    return _create_variants(
+        an_p311_path=an_p311_path,
+        an_p310_path=an_p310_path,
+        an_p39_path=an_p39_path,
+        an_p38_path=an_p38_path,
+        p311_path=p311_path,
+        p310_path=p310_path,
+        p39_path=p39_path,
+        p38_path=p38_path,
+    )
+
+
+def _create_variants(
+    an_p311_path: Path,
+    an_p310_path: Path,
+    an_p39_path: Path,
+    an_p38_path: Path,
+    p311_path: Path,
+    p310_path: Path,
+    p39_path: Path,
+    p38_path: Path,
+) -> dict[tuple[str, Union[bool, None]], Variant]:
+    variants: dict[tuple[str, Union[bool, None]], Variant] = {}
     if an_p311_path.exists():
         v = Variant(
             path=an_p311_path,
@@ -245,6 +301,10 @@ class IncludeVariantsPreprocessor(Preprocessor):
             variants = calculate_variants(base_path)
             if len(variants) == 0:
                 raise FileNotFoundError(f"Could not find any variants for {base_path}")
+            if len(variants) == 1:
+                folder_variants = calculate_variants_folder(base_path)
+                if len(folder_variants) > 1:
+                    variants = folder_variants
             sorted_variants: list[Variant] = []
             preferred_variant = None
             for an in [True, False, None]:
@@ -299,7 +359,7 @@ class IncludeVariantsPreprocessor(Preprocessor):
 
                 block_lines.extend(
                     [
-                        f"//// tab | {preferred_variant.title}" "",
+                        f"//// tab | {preferred_variant.title}",
                         first_line,
                         *internal_block_lines,
                         "```",
