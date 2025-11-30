@@ -27,11 +27,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.9'
-      - name: Setup uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          version: "0.4.15"
-          enable-cache: true
+      - uses: astral-sh/setup-uv@v7
       - name: Install Dependencies
         run: uv sync
       - uses: actions/download-artifact@v6

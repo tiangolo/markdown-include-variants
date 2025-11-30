@@ -25,11 +25,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - name: Setup uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          version: "0.4.15"
-          enable-cache: true
+      - uses: astral-sh/setup-uv@v7
       - name: Install Dependencies
         run: uv sync
       - name: Lint
@@ -52,11 +48,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Setup uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          version: "0.4.15"
-          enable-cache: true
+      - uses: astral-sh/setup-uv@v7
       - name: Install Dependencies
         run: uv sync
       - run: mkdir coverage
@@ -85,11 +77,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - name: Setup uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          version: "0.4.15"
-          enable-cache: true
+      - uses: astral-sh/setup-uv@v7
       - name: Get coverage files
         uses: actions/download-artifact@v6
         with:
