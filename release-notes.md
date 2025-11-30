@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.0.7
+
 ### Features
 
 * ✨ Support `title` option. PR [#39](https://github.com/tiangolo/markdown-include-variants/pull/39) by [@YuriiMotov](https://github.com/YuriiMotov).
