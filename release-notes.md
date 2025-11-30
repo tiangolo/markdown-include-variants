@@ -6,6 +6,10 @@
 
 * ✨ Support `title` option. PR [#39](https://github.com/tiangolo/markdown-include-variants/pull/39) by [@YuriiMotov](https://github.com/YuriiMotov).
 
+### Upgrades
+
+* ⬆️ Upgrade uv config in pyproject.toml. PR [#40](https://github.com/tiangolo/markdown-include-variants/pull/40) by [@tiangolo](https://github.com/tiangolo).
+
 ## 0.0.6
 
 ### Features
