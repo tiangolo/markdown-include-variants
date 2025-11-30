@@ -2,6 +2,12 @@
 
 ## Latest Changes
 
+## 0.0.6
+
+### Features
+
+* ✨ Search for variants by folder name if no variants by file name found. PR [#38](https://github.com/tiangolo/markdown-include-variants/pull/38) by [@YuriiMotov](https://github.com/YuriiMotov).
+
 ### Internal
 
 * ⬆ Bump actions/checkout from 5 to 6. PR [#37](https://github.com/tiangolo/markdown-include-variants/pull/37) by [@dependabot[bot]](https://github.com/apps/dependabot).
