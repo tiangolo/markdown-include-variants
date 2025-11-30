@@ -223,7 +223,7 @@ class IncludeVariantsPreprocessor(Preprocessor):
             configs_str = line_match.group(2).strip()
             include_lines: list[tuple[int, int]] = []
             highlight_lines: list[tuple[int, int]] = []
-            file_title: Union[str, None] = None
+            title: Union[str, None] = None
             for config_match in re.finditer(re_config, configs_str):
                 if config_match:
                     name = config_match.group(1)
@@ -233,7 +233,8 @@ class IncludeVariantsPreprocessor(Preprocessor):
                     elif name == "hl":
                         highlight_lines.extend(parse_lines_index(value_str))
                     elif name == "title":
-                        file_title = value_str.lstrip('"').rstrip('"')
+                        assert value_str.startswith('"') and value_str.endswith('"')
+                        title = value_str[1:-1]
             use_hl_lines: list[tuple[int, int]] = []
             if highlight_lines:
                 if include_lines:
@@ -298,8 +299,8 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 first_line = "```python"
                 if use_hl_lines:
                     first_line += f' hl_lines="{use_hl_lines_str}"'
-                if file_title:
-                    first_line += f' title="{file_title}"'
+                if title:
+                    first_line += f' title="{title}"'
 
                 block_lines.extend(
                     [
@@ -317,8 +318,8 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 if highlight_lines:
                     hl_lines_full_str = generate_hl_string(highlight_lines)
                     first_line_full += f' hl_lines="{hl_lines_full_str}"'
-                if file_title:
-                    first_line_full += f' title="{file_title}"'
+                if title:
+                    first_line_full += f' title="{title}"'
                 block_lines.extend(
                     [
                         "///// details | 👀 Full file preview",
@@ -337,8 +338,8 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 )
             if len(sorted_variants):
                 first_line_variant = "```python"
-                if file_title:
-                    first_line_variant += f' title="{file_title}"'
+                if title:
+                    first_line_variant += f' title="{title}"'
                 block_lines.extend(
                     [
                         "///// details | 🤓 Other versions and variants",
