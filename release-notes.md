@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Fixes
+
+* 🐛 Fix case with single folder with non-default version. PR [#41](https://github.com/tiangolo/markdown-include-variants/pull/41) by [@YuriiMotov](https://github.com/YuriiMotov).
+
 ## 0.0.7
 
 ### Features
