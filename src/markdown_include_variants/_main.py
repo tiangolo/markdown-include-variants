@@ -308,6 +308,14 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 folder_variants = calculate_variants_folder(base_path)
                 if len(folder_variants) > 1:
                     variants = folder_variants
+                elif len(folder_variants) == 1:
+                    file_variant_is_default = variants.get(("py38", None)) is not None
+                    folder_variant_is_default = (
+                        folder_variants.get(("py38", None)) is not None
+                    )
+                    # File name doesn't contain any suffixes, but folder does - use variants from folder
+                    if file_variant_is_default and not folder_variant_is_default:
+                        variants = folder_variants
             sorted_variants: list[Variant] = []
             preferred_variant = None
             for an in [True, False, None]:
