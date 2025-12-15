@@ -79,7 +79,7 @@ jobs:
           python-version: '3.11'
       - uses: astral-sh/setup-uv@v7
       - name: Get coverage files
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           pattern: coverage-*
           path: coverage
