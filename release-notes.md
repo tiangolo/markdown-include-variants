@@ -4,6 +4,7 @@
 
 ### Internal
 
+* 👷 Configure coverage, error on main tests, don't wait for Smokeshow. PR [#45](https://github.com/tiangolo/markdown-include-variants/pull/45) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Run Smokeshow always, even on test failures. PR [#44](https://github.com/tiangolo/markdown-include-variants/pull/44) by [@YuriiMotov](https://github.com/YuriiMotov).
 
 ## 0.0.8
