@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* 👷 Run Smokeshow always, even on test failures. PR [#44](https://github.com/tiangolo/markdown-include-variants/pull/44) by [@YuriiMotov](https://github.com/YuriiMotov).
+
 ## 0.0.8
 
 ### Fixes
