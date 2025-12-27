@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump actions/upload-artifact from 5 to 6. PR [#42](https://github.com/tiangolo/markdown-include-variants/pull/42) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Update pre-commit to use local Ruff instead of hook, unpin prek. PR [#52](https://github.com/tiangolo/markdown-include-variants/pull/52) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Add pre-commit workflow. PR [#48](https://github.com/tiangolo/markdown-include-variants/pull/48) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Configure coverage, error on main tests, don't wait for Smokeshow. PR [#45](https://github.com/tiangolo/markdown-include-variants/pull/45) by [@YuriiMotov](https://github.com/YuriiMotov).
