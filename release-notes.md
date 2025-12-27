@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump actions/checkout from 5 to 6. PR [#50](https://github.com/tiangolo/markdown-include-variants/pull/50) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/download-artifact from 6 to 7. PR [#43](https://github.com/tiangolo/markdown-include-variants/pull/43) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/upload-artifact from 5 to 6. PR [#42](https://github.com/tiangolo/markdown-include-variants/pull/42) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Update pre-commit to use local Ruff instead of hook, unpin prek. PR [#52](https://github.com/tiangolo/markdown-include-variants/pull/52) by [@YuriiMotov](https://github.com/YuriiMotov).
