@@ -19,7 +19,12 @@ jobs:
       matrix:
         python-version:
           - "3.9"
+        uv-resolution:
+          - highest
+          - lowest-direct
       fail-fast: false
+    env:
+      UV_RESOLUTION: ${{ matrix.uv-resolution }}
     steps:
       - name: Dump GitHub context
         env:
@@ -37,12 +42,12 @@ jobs:
       - name: Test
         run: uv run bash scripts/test.sh
         env:
-          COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}
-          CONTEXT: ${{ runner.os }}-py${{ matrix.python-version }}
+          COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.uv-resolution }}
+          CONTEXT: ${{ runner.os }}-py${{ matrix.python-version }}-${{ matrix.uv-resolution }}
       - name: Store coverage files
         uses: actions/upload-artifact@v6
         with:
-          name: coverage-${{ matrix.python-version }}
+          name: coverage-${{ matrix.python-version }}-${{ matrix.uv-resolution }}
           path: coverage
           include-hidden-files: true
 
