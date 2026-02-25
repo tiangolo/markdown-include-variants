@@ -14,13 +14,13 @@
 * 👷 Configure coverage, error on main tests, don't wait for Smokeshow. PR [#45](https://github.com/tiangolo/markdown-include-variants/pull/45) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Run Smokeshow always, even on test failures. PR [#44](https://github.com/tiangolo/markdown-include-variants/pull/44) by [@YuriiMotov](https://github.com/YuriiMotov).
 
-## 0.0.8
+## 0.0.8 (2025-12-12)
 
 ### Fixes
 
 * 🐛 Fix case with single folder with non-default version. PR [#41](https://github.com/tiangolo/markdown-include-variants/pull/41) by [@YuriiMotov](https://github.com/YuriiMotov).
 
-## 0.0.7
+## 0.0.7 (2025-11-30)
 
 ### Features
 
@@ -30,7 +30,7 @@
 
 * ⬆️ Upgrade uv config in pyproject.toml. PR [#40](https://github.com/tiangolo/markdown-include-variants/pull/40) by [@tiangolo](https://github.com/tiangolo).
 
-## 0.0.6
+## 0.0.6 (2025-11-28)
 
 ### Features
 
@@ -52,7 +52,7 @@
 * ⬆ Bump actions/download-artifact from 4 to 5. PR [#24](https://github.com/tiangolo/markdown-include-variants/pull/24) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump tiangolo/latest-changes from 0.3.2 to 0.4.0. PR [#23](https://github.com/tiangolo/markdown-include-variants/pull/23) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
-## 0.0.5
+## 0.0.5 (2025-09-22)
 
 ### Features
 
@@ -64,7 +64,7 @@
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.12.3 to 1.12.4. PR [#21](https://github.com/tiangolo/markdown-include-variants/pull/21) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Publish on release released. PR [#20](https://github.com/tiangolo/markdown-include-variants/pull/20) by [@tiangolo](https://github.com/tiangolo).
 
-## 0.0.4
+## 0.0.4 (2024-12-22)
 
 ### Features
 
@@ -78,13 +78,13 @@
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.11.0 to 1.12.3. PR [#16](https://github.com/tiangolo/markdown-include-variants/pull/16) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.10.3 to 1.11.0. PR [#11](https://github.com/tiangolo/markdown-include-variants/pull/11) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
-## 0.0.3
+## 0.0.3 (2024-10-09)
 
 ### Features
 
 * ✨ Add highlight for full file preview. PR [#10](https://github.com/tiangolo/markdown-include-variants/pull/10) by [@tiangolo](https://github.com/tiangolo).
 
-## 0.0.2
+## 0.0.2 (2024-10-08)
 
 ### Refactors
 
