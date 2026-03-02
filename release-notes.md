@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump actions/upload-artifact from 6 to 7. PR [#56](https://github.com/tiangolo/markdown-include-variants/pull/56) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/download-artifact from 7 to 8. PR [#57](https://github.com/tiangolo/markdown-include-variants/pull/57) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Run tests with lower bound uv sync. PR [#54](https://github.com/tiangolo/markdown-include-variants/pull/54) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Run mypy by pre-commit instead of `lint` job in `test.yml` workflow. PR [#53](https://github.com/tiangolo/markdown-include-variants/pull/53) by [@YuriiMotov](https://github.com/YuriiMotov).
