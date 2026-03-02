@@ -29,7 +29,7 @@ jobs:
       - uses: astral-sh/setup-uv@v7
       - name: Install Dependencies
         run: uv sync
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: coverage-html
           path: htmlcov
