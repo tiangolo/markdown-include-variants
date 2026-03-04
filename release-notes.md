@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Docs
+
+* 📝 Add dates to release notes. PR [#55](https://github.com/tiangolo/markdown-include-variants/pull/55) by [@YuriiMotov](https://github.com/YuriiMotov).
+
 ### Internal
 
 * ⬆ Bump actions/upload-artifact from 6 to 7. PR [#56](https://github.com/tiangolo/markdown-include-variants/pull/56) by [@dependabot[bot]](https://github.com/apps/dependabot).
