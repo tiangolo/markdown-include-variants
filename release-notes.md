@@ -8,6 +8,7 @@
 
 ### Internal
 
+* 🔨 Add pre-commit hook to ensure latest release header has date. PR [#61](https://github.com/tiangolo/markdown-include-variants/pull/61) by [@YuriiMotov](https://github.com/YuriiMotov).
 * ⬆️ Update lower version bound for ruff to `>=0.14.14`. PR [#62](https://github.com/tiangolo/markdown-include-variants/pull/62) by [@YuriiMotov](https://github.com/YuriiMotov).
 * ⬆️ Increase lower version bound of `pymdown-extensions` to `>=10.21.2`. PR [#60](https://github.com/tiangolo/markdown-include-variants/pull/60) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Add `ty` to precommit. PR [#58](https://github.com/tiangolo/markdown-include-variants/pull/58) by [@svlandeg](https://github.com/svlandeg).
