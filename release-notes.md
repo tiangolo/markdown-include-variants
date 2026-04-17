@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump pypa/gh-action-pypi-publish from 1.13.0 to 1.14.0. PR [#63](https://github.com/tiangolo/markdown-include-variants/pull/63) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔒 Pin GitHub actions by commit SHA. PR [#59](https://github.com/tiangolo/markdown-include-variants/pull/59) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 🔨 Add pre-commit hook to ensure latest release header has date. PR [#61](https://github.com/tiangolo/markdown-include-variants/pull/61) by [@YuriiMotov](https://github.com/YuriiMotov).
 * ⬆️ Update lower version bound for ruff to `>=0.14.14`. PR [#62](https://github.com/tiangolo/markdown-include-variants/pull/62) by [@YuriiMotov](https://github.com/YuriiMotov).
