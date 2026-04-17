@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump astral-sh/setup-uv from 7.6.0 to 8.0.0. PR [#64](https://github.com/tiangolo/markdown-include-variants/pull/64) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pypa/gh-action-pypi-publish from 1.13.0 to 1.14.0. PR [#63](https://github.com/tiangolo/markdown-include-variants/pull/63) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔒 Pin GitHub actions by commit SHA. PR [#59](https://github.com/tiangolo/markdown-include-variants/pull/59) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 🔨 Add pre-commit hook to ensure latest release header has date. PR [#61](https://github.com/tiangolo/markdown-include-variants/pull/61) by [@YuriiMotov](https://github.com/YuriiMotov).
