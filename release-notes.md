@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump actions/labeler from 6.0.1 to 6.1.0. PR [#67](https://github.com/tiangolo/markdown-include-variants/pull/67) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump astral-sh/setup-uv from 8.0.0 to 8.1.0. PR [#66](https://github.com/tiangolo/markdown-include-variants/pull/66) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump actions/upload-artifact from 7.0.0 to 7.0.1. PR [#65](https://github.com/tiangolo/markdown-include-variants/pull/65) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump astral-sh/setup-uv from 7.6.0 to 8.0.0. PR [#64](https://github.com/tiangolo/markdown-include-variants/pull/64) by [@dependabot[bot]](https://github.com/apps/dependabot).
