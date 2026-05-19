@@ -8,6 +8,7 @@
 
 ### Internal
 
+* 👷 Update Dependabot. PR [#69](https://github.com/tiangolo/markdown-include-variants/pull/69) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Bump `ty` from 0.0.21 to 0.0.35 and error on warnings. PR [#68](https://github.com/tiangolo/markdown-include-variants/pull/68) by [@svlandeg](https://github.com/svlandeg).
 * ⬆ Bump actions/labeler from 6.0.1 to 6.1.0. PR [#67](https://github.com/tiangolo/markdown-include-variants/pull/67) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump astral-sh/setup-uv from 8.0.0 to 8.1.0. PR [#66](https://github.com/tiangolo/markdown-include-variants/pull/66) by [@dependabot[bot]](https://github.com/apps/dependabot).
