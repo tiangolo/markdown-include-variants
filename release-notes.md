@@ -8,6 +8,7 @@
 
 ### Internal
 
+* 👷 Automate release preparation. PR [#74](https://github.com/tiangolo/markdown-include-variants/pull/74) by [@tiangolo](https://github.com/tiangolo).
 * 🔥 Remove configs now in central GitHub repo. PR [#72](https://github.com/tiangolo/markdown-include-variants/pull/72) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Update Dependabot. PR [#69](https://github.com/tiangolo/markdown-include-variants/pull/69) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Bump `ty` from 0.0.21 to 0.0.35 and error on warnings. PR [#68](https://github.com/tiangolo/markdown-include-variants/pull/68) by [@svlandeg](https://github.com/svlandeg).
