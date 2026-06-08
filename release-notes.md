@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump mxschmitt/action-tmate from 3.23 to 3.24 in the github-actions group. PR [#76](https://github.com/tiangolo/markdown-include-variants/pull/76) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump markdown from 3.7 to 3.9. PR [#71](https://github.com/tiangolo/markdown-include-variants/pull/71) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Automate release preparation. PR [#74](https://github.com/tiangolo/markdown-include-variants/pull/74) by [@tiangolo](https://github.com/tiangolo).
 * 🔥 Remove configs now in central GitHub repo. PR [#72](https://github.com/tiangolo/markdown-include-variants/pull/72) by [@tiangolo](https://github.com/tiangolo).
