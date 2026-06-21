@@ -39,6 +39,7 @@ dev = [
     "ty>=0.0.25",
     "typer>=0.12.5",
     "types-markdown>=3.7.0.20240822",
+    "zizmor>=1.16.3",
 ]
 
 [tool.hatch.version]

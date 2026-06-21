@@ -1,6 +1,6 @@
 name: Labels
 on:
-  pull_request_target:
+  pull_request_target: # zizmor: ignore[dangerous-triggers]
     types:
       - opened
       - synchronize
@@ -21,10 +21,10 @@ jobs:
     - run: echo "Done adding labels"
   # Run this after labeler applied labels
   check-labels:
-    needs:
-      - labeler
     permissions:
       pull-requests: read
+    needs:
+      - labeler
     runs-on: ubuntu-latest
     steps:
       - uses: agilepathway/label-checker@c3d16ad512e7cea5961df85ff2486bb774caf3c5 # v1.6.65

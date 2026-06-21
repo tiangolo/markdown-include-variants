@@ -1,17 +1,17 @@
 name: pre-commit
-
 on:
   pull_request:
     types:
       - opened
       - synchronize
-
+permissions: {}
 env:
   # Forks and Dependabot don't have access to secrets
   HAS_SECRETS: ${{ secrets.PRE_COMMIT != '' }}
-
 jobs:
   pre-commit:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
@@ -28,15 +28,17 @@ jobs:
           # And it needs the full history to be able to compute diffs
           fetch-depth: 0
           # A token other than the default GITHUB_TOKEN is needed to be able to trigger CI
-          token: ${{ secrets.PRE_COMMIT }}
+          token: ${{ secrets.PRE_COMMIT }} # zizmor: ignore[secrets-outside-env]
+          persist-credentials: true # Required for `git push` command
       # pre-commit lite ci needs the default checkout configs to work
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         name: Checkout PR for fork
         if: env.HAS_SECRETS == 'false'
         with:
-        # To be able to commit it needs the head branch of the PR, the remote one
+          # To be able to commit it needs the head branch of the PR, the remote one
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
+          persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
@@ -70,9 +72,8 @@ jobs:
       - name: Error out on pre-commit errors
         if: steps.precommit.outcome == 'failure'
         run: exit 1
-
   # https://github.com/marketplace/actions/alls-green#why
-  pre-commit-alls-green:  # This job does nothing and is only used for the branch protection
+  pre-commit-alls-green: # This job does nothing and is only used for the branch protection
     if: always()
     needs:
       - pre-commit
