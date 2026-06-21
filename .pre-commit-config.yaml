@@ -48,3 +48,13 @@ repos:
         entry: uv run python scripts/add_latest_release_date.py
         files: ^release-notes\.md$
         pass_filenames: false
+
+  - repo: local
+    hooks:
+      - id: zizmor
+        name: zizmor
+        language: python
+        entry: uv run zizmor .
+        files: ^\.github/workflows/|^uv\.lock$
+        require_serial: true
+        pass_filenames: false
