@@ -88,6 +88,7 @@ jobs:
     if: always()
     needs:
       - coverage-combine
+      - test
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
