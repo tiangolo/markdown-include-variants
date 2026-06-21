@@ -9,6 +9,7 @@
 
 ### Internal
 
+* 🔒️ Add zizmor workflow security checks. PR [#83](https://github.com/tiangolo/markdown-include-variants/pull/83) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Group Dependabot updates. PR [#82](https://github.com/tiangolo/markdown-include-variants/pull/82) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update Dependabot ecosystem coverage. PR [#81](https://github.com/tiangolo/markdown-include-variants/pull/81) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Fix alls-green test dependency. PR [#79](https://github.com/tiangolo/markdown-include-variants/pull/79) by [@tiangolo](https://github.com/tiangolo).
