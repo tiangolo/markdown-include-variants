@@ -3,9 +3,6 @@
 <a href="https://github.com/tiangolo/markdown-include-variants/actions?query=workflow%3ATest" target="_blank">
     <img src="https://github.com/tiangolo/markdown-include-variants/workflows/Test/badge.svg" alt="Test">
 </a>
-<a href="https://github.com/tiangolo/markdown-include-variants/actions?query=workflow%3APublish" target="_blank">
-    <img src="https://github.com/tiangolo/markdown-include-variants/workflows/Publish/badge.svg" alt="Publish">
-</a>
 <a href="https://coverage-badge.samuelcolvin.workers.dev/redirect/tiangolo/markdown-include-variants" target="_blank">
     <img src="https://coverage-badge.samuelcolvin.workers.dev/tiangolo/markdown-include-variants.svg" alt="Coverage">
 <a href="https://pypi.org/project/markdown-include-variants" target="_blank">
