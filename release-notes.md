@@ -4,6 +4,7 @@
 
 ### Docs
 
+* 📝 Update docs badges: remove Publish badge, it doesn't give extra information. PR [#80](https://github.com/tiangolo/markdown-include-variants/pull/80) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Add dates to release notes. PR [#55](https://github.com/tiangolo/markdown-include-variants/pull/55) by [@YuriiMotov](https://github.com/YuriiMotov).
 
 ### Internal
