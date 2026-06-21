@@ -9,6 +9,7 @@
 
 ### Internal
 
+* ⬆️ Group Dependabot updates. PR [#82](https://github.com/tiangolo/markdown-include-variants/pull/82) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update Dependabot ecosystem coverage. PR [#81](https://github.com/tiangolo/markdown-include-variants/pull/81) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Fix alls-green test dependency. PR [#79](https://github.com/tiangolo/markdown-include-variants/pull/79) by [@tiangolo](https://github.com/tiangolo).
 * ⬆ Bump the python-packages group across 1 directory with 10 updates. PR [#75](https://github.com/tiangolo/markdown-include-variants/pull/75) by [@dependabot[bot]](https://github.com/apps/dependabot).
