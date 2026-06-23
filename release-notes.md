@@ -9,6 +9,7 @@
 
 ### Internal
 
+* ⬆️ Update issue-manager to 0.7.0. PR [#85](https://github.com/tiangolo/markdown-include-variants/pull/85) by [@tiangolo](https://github.com/tiangolo).
 * 🔒️ Add zizmor workflow security checks. PR [#83](https://github.com/tiangolo/markdown-include-variants/pull/83) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Group Dependabot updates. PR [#82](https://github.com/tiangolo/markdown-include-variants/pull/82) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update Dependabot ecosystem coverage. PR [#81](https://github.com/tiangolo/markdown-include-variants/pull/81) by [@tiangolo](https://github.com/tiangolo).
