@@ -9,6 +9,7 @@
 
 ### Internal
 
+* 👷 Simplify pull request workflow triggers. PR [#87](https://github.com/tiangolo/markdown-include-variants/pull/87) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Update issue-manager to 0.7.1. PR [#86](https://github.com/tiangolo/markdown-include-variants/pull/86) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update issue-manager to 0.7.0. PR [#85](https://github.com/tiangolo/markdown-include-variants/pull/85) by [@tiangolo](https://github.com/tiangolo).
 * 🔒️ Add zizmor workflow security checks. PR [#83](https://github.com/tiangolo/markdown-include-variants/pull/83) by [@tiangolo](https://github.com/tiangolo).
