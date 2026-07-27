@@ -9,6 +9,7 @@
 
 ### Internal
 
+* ⬆️ Upgrade latest-changes to 0.7.1. PR [#96](https://github.com/tiangolo/markdown-include-variants/pull/96) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Fix latest-changes checkout target. PR [#92](https://github.com/tiangolo/markdown-include-variants/pull/92) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update issue-manager to 0.8.1. PR [#91](https://github.com/tiangolo/markdown-include-variants/pull/91) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update latest-changes to 0.6.1. PR [#90](https://github.com/tiangolo/markdown-include-variants/pull/90) by [@tiangolo](https://github.com/tiangolo).
