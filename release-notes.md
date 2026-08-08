@@ -9,6 +9,7 @@
 
 ### Internal
 
+* 👷 Use GitHub CLI for Git authentication. PR [#103](https://github.com/tiangolo/markdown-include-variants/pull/103) by [@tiangolo](https://github.com/tiangolo).
 * ✨ Use PR Submit for automated PRs. PR [#101](https://github.com/tiangolo/markdown-include-variants/pull/101) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Use PR Push commit identity. PR [#100](https://github.com/tiangolo/markdown-include-variants/pull/100) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Use PR Push for pre-commit. PR [#98](https://github.com/tiangolo/markdown-include-variants/pull/98) by [@tiangolo](https://github.com/tiangolo).
