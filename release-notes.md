@@ -9,6 +9,7 @@
 
 ### Internal
 
+* 👷 Use PR Push commit identity. PR [#100](https://github.com/tiangolo/markdown-include-variants/pull/100) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Use PR Push for pre-commit. PR [#98](https://github.com/tiangolo/markdown-include-variants/pull/98) by [@tiangolo](https://github.com/tiangolo).
 * 🔥 Remove the old Latest Changes workflow. PR [#97](https://github.com/tiangolo/markdown-include-variants/pull/97) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Upgrade latest-changes to 0.7.1. PR [#96](https://github.com/tiangolo/markdown-include-variants/pull/96) by [@tiangolo](https://github.com/tiangolo).
