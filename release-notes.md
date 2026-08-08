@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.0.9 (2026-08-08)
+
 ### Docs
 
 * 📝 Update docs badges: remove Publish badge, it doesn't give extra information. PR [#80](https://github.com/tiangolo/markdown-include-variants/pull/80) by [@tiangolo](https://github.com/tiangolo).
