@@ -9,6 +9,7 @@
 
 ### Internal
 
+* ⬆ Bump the python-packages group across 1 directory with 4 updates. PR [#78](https://github.com/tiangolo/markdown-include-variants/pull/78) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🔧 Set Dependabot schedule interval to "monthly". PR [#89](https://github.com/tiangolo/markdown-include-variants/pull/89) by [@YuriiMotov](https://github.com/YuriiMotov).
 * ⬆ Bump the github-actions group across 1 directory with 6 updates. PR [#95](https://github.com/tiangolo/markdown-include-variants/pull/95) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Use GitHub CLI for Git authentication. PR [#103](https://github.com/tiangolo/markdown-include-variants/pull/103) by [@tiangolo](https://github.com/tiangolo).
