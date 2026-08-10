@@ -9,6 +9,18 @@
 
 ### Internal
 
+* ⬆ Bump the python-packages group across 1 directory with 4 updates. PR [#78](https://github.com/tiangolo/markdown-include-variants/pull/78) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* 🔧 Set Dependabot schedule interval to "monthly". PR [#89](https://github.com/tiangolo/markdown-include-variants/pull/89) by [@YuriiMotov](https://github.com/YuriiMotov).
+* ⬆ Bump the github-actions group across 1 directory with 6 updates. PR [#95](https://github.com/tiangolo/markdown-include-variants/pull/95) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* 👷 Use GitHub CLI for Git authentication. PR [#103](https://github.com/tiangolo/markdown-include-variants/pull/103) by [@tiangolo](https://github.com/tiangolo).
+* ✨ Use PR Submit for automated PRs. PR [#101](https://github.com/tiangolo/markdown-include-variants/pull/101) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Use PR Push commit identity. PR [#100](https://github.com/tiangolo/markdown-include-variants/pull/100) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Use PR Push for pre-commit. PR [#98](https://github.com/tiangolo/markdown-include-variants/pull/98) by [@tiangolo](https://github.com/tiangolo).
+* 🔥 Remove the old Latest Changes workflow. PR [#97](https://github.com/tiangolo/markdown-include-variants/pull/97) by [@tiangolo](https://github.com/tiangolo).
+* ⬆️ Upgrade latest-changes to 0.7.1. PR [#96](https://github.com/tiangolo/markdown-include-variants/pull/96) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Fix latest-changes checkout target. PR [#92](https://github.com/tiangolo/markdown-include-variants/pull/92) by [@tiangolo](https://github.com/tiangolo).
+* ⬆️ Update issue-manager to 0.8.1. PR [#91](https://github.com/tiangolo/markdown-include-variants/pull/91) by [@tiangolo](https://github.com/tiangolo).
+* ⬆️ Update latest-changes to 0.6.1. PR [#90](https://github.com/tiangolo/markdown-include-variants/pull/90) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Simplify pull request workflow triggers. PR [#87](https://github.com/tiangolo/markdown-include-variants/pull/87) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Update issue-manager to 0.7.1. PR [#86](https://github.com/tiangolo/markdown-include-variants/pull/86) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Update issue-manager to 0.7.0. PR [#85](https://github.com/tiangolo/markdown-include-variants/pull/85) by [@tiangolo](https://github.com/tiangolo).
