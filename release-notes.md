@@ -9,6 +9,7 @@
 
 ### Internal
 
+* 👷 Add GH workflow to bump pre-commit hook versions. PR [#88](https://github.com/tiangolo/markdown-include-variants/pull/88) by [@YuriiMotov](https://github.com/YuriiMotov).
 * ⬆️ Bump `pygments` to 2.21.0 to fix tests with resolution `lowest-direct`. PR [#107](https://github.com/tiangolo/markdown-include-variants/pull/107) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Migrate automatic labels to Latest Changes. PR [#105](https://github.com/tiangolo/markdown-include-variants/pull/105) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Remove legacy label check. PR [#104](https://github.com/tiangolo/markdown-include-variants/pull/104) by [@tiangolo](https://github.com/tiangolo).
