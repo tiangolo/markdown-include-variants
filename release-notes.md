@@ -9,6 +9,7 @@
 
 ### Internal
 
+* ⬆️ Bump `pygments` to 2.21.0 to fix tests with resolution `lowest-direct`. PR [#107](https://github.com/tiangolo/markdown-include-variants/pull/107) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Migrate automatic labels to Latest Changes. PR [#105](https://github.com/tiangolo/markdown-include-variants/pull/105) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Remove legacy label check. PR [#104](https://github.com/tiangolo/markdown-include-variants/pull/104) by [@tiangolo](https://github.com/tiangolo).
 * ⬆ Bump the python-packages group across 1 directory with 4 updates. PR [#78](https://github.com/tiangolo/markdown-include-variants/pull/78) by [@dependabot[bot]](https://github.com/apps/dependabot).
