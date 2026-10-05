@@ -60,25 +60,25 @@ def test_simple_ln_include():
         inspect.cleandoc(
             """
             <p>//// tab | Python 3.8+
-            <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 1&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 2&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 3&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 1"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 2"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 3"</span><span class="p">)</span>
 
             <span class="c1"># Code below omitted 👇</span>
             </code></pre></div></p>
             <p>////</p>
             <p>///// details | 👀 Full file preview</p>
             <p>//// tab | Python 3.8+</p>
-            <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 1&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 2&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 3&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 4&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 5&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 6&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 7&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 8&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 9&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;simple line 10&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 1"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 2"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 3"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 4"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 5"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 6"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 7"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 8"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 9"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 10"</span><span class="p">)</span>
             </code></pre></div>
             <p>////</p>
             <p>/////</p>
