@@ -4,6 +4,7 @@
 
 ### Docs
 
+* 🎨 Enable Ruff formatting for Python in Markdown. PR [#112](https://github.com/tiangolo/markdown-include-variants/pull/112) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Update docs badges: remove Publish badge, it doesn't give extra information. PR [#80](https://github.com/tiangolo/markdown-include-variants/pull/80) by [@tiangolo](https://github.com/tiangolo).
 * 📝 Add dates to release notes. PR [#55](https://github.com/tiangolo/markdown-include-variants/pull/55) by [@YuriiMotov](https://github.com/YuriiMotov).
 
