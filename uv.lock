@@ -424,7 +424,7 @@ dev = [
     { name = "prek", specifier = ">=0.2.24,<1.0.0" },
     { name = "pymdown-extensions", specifier = ">=10.21.2" },
     { name = "pytest", specifier = ">=8.3.3" },
-    { name = "ruff", specifier = ">=0.14.14" },
+    { name = "ruff", specifier = ">=0.16.0" },
     { name = "smokeshow", specifier = ">=0.4.0" },
     { name = "ty", specifier = ">=0.0.25" },
     { name = "typer", specifier = ">=0.12.5" },
