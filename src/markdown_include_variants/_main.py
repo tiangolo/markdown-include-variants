@@ -1,7 +1,7 @@
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Literal, Union
+from typing import Any, Literal
 
 from markdown import Extension, Markdown
 from markdown.preprocessors import Preprocessor
@@ -18,7 +18,7 @@ SUFFIXES_TO_REMOVE = ["_an", "_py39", "_py310", "_py311"]
 class Variant:
     path: Path
     title: str
-    is_annotated: Union[bool, None]
+    is_annotated: bool | None
     version: Literal["py38", "py39", "py310", "py311"]
 
 
@@ -30,7 +30,7 @@ def remove_suffixes(base_name: str, suffixes: list[str]) -> str:
     return base_name
 
 
-def calculate_variants(base_path: Path) -> dict[tuple[str, Union[bool, None]], Variant]:
+def calculate_variants(base_path: Path) -> dict[tuple[str, bool | None], Variant]:
     preferred_name = base_path.stem
     base_name = remove_suffixes(preferred_name, SUFFIXES_TO_REMOVE)
     base_dir = base_path.parent
@@ -58,7 +58,7 @@ def calculate_variants(base_path: Path) -> dict[tuple[str, Union[bool, None]], V
 
 def calculate_variants_folder(
     base_path: Path,
-) -> dict[tuple[str, Union[bool, None]], Variant]:
+) -> dict[tuple[str, bool | None], Variant]:
     file_name = base_path.name
     folder = base_path.parent
     base_dir = folder.parent
@@ -94,8 +94,8 @@ def _create_variants(
     p310_path: Path,
     p39_path: Path,
     p38_path: Path,
-) -> dict[tuple[str, Union[bool, None]], Variant]:
-    variants: dict[tuple[str, Union[bool, None]], Variant] = {}
+) -> dict[tuple[str, bool | None], Variant]:
+    variants: dict[tuple[str, bool | None], Variant] = {}
     if an_p311_path.exists():
         v = Variant(
             path=an_p311_path,
@@ -279,7 +279,7 @@ class IncludeVariantsPreprocessor(Preprocessor):
             configs_str = line_match.group(2).strip()
             include_lines: list[tuple[int, int]] = []
             highlight_lines: list[tuple[int, int]] = []
-            title: Union[str, None] = None
+            title: str | None = None
             for config_match in re.finditer(re_config, configs_str):
                 if config_match:
                     name = config_match.group(1)
