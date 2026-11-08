@@ -365,7 +365,7 @@ dev = [
     { name = "ruff", specifier = ">=0.16.0" },
     { name = "smokeshow", specifier = ">=0.4.0" },
     { name = "ty", specifier = ">=0.0.25" },
-    { name = "typer", specifier = ">=0.12.5" },
+    { name = "typer", specifier = ">=0.18.0" },
     { name = "types-markdown", specifier = ">=3.7.0.20240822" },
     { name = "zizmor", specifier = ">=1.16.3" },
 ]
