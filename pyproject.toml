@@ -7,7 +7,7 @@ name = "markdown-include-variants"
 description = "Markdown extension to expand directives to include source example files to also include their variants. Only useful to tiangolo's projets. Don't use it. 😅"
 readme = "README.md"
 dynamic = ["version"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [
     { name = "Sebastián Ramírez", email = "tiangolo@gmail.com" },
 ]
@@ -37,7 +37,7 @@ dev = [
     "ruff>=0.16.0",
     "smokeshow>=0.4.0",
     "ty>=0.0.25",
-    "typer>=0.12.5",
+    "typer>=0.18.0",
     "types-markdown>=3.7.0.20240822",
     "zizmor>=1.16.3",
 ]
