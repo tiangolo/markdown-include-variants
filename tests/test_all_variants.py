@@ -35,7 +35,7 @@ def test_all_variants_plain():
             ////
             //// tab | Python 3.8+</p>
             <p><code>python
-            {!docs_src/all_variants/tutorial001_an.py!}</code>
+            {!docs_src/all_variants/tutorial001_an_py38.py!}</code>
             ////
             //// tab | Python 3.11+ - non-Annotated</p>
             <p>/// tip</p>
@@ -63,7 +63,7 @@ def test_all_variants_plain():
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
             <p>///</p>
             <p><code>python
-            {!docs_src/all_variants/tutorial001.py!}</code>
+            {!docs_src/all_variants/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """
@@ -90,8 +90,8 @@ def test_all_variants_ln_hl():
             <p>```</p>
             <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.11+</p>
-            <p><code>python hl_lines="4-5"
+            <p>//// tab | Python 3.11+
+            <code>python hl_lines="4-5"
             {!docs_src/all_variants/tutorial001_an_py311.py!}</code></p>
             <p>////</p>
             <p>/////</p>
@@ -106,7 +106,7 @@ def test_all_variants_ln_hl():
             ////
             //// tab | Python 3.8+</p>
             <p><code>python
-            {!docs_src/all_variants/tutorial001_an.py!}</code>
+            {!docs_src/all_variants/tutorial001_an_py38.py!}</code>
             ////
             //// tab | Python 3.11+ - non-Annotated</p>
             <p>/// tip</p>
@@ -134,7 +134,7 @@ def test_all_variants_ln_hl():
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
             <p>///</p>
             <p><code>python
-            {!docs_src/all_variants/tutorial001.py!}</code>
+            {!docs_src/all_variants/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """
@@ -161,8 +161,8 @@ def test_all_variants_ln_hl_title():
             <p>```</p>
             <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.11+</p>
-            <p><code>python hl_lines="4-5" title="main.py"
+            <p>//// tab | Python 3.11+
+            <code>python hl_lines="4-5" title="main.py"
             {!docs_src/all_variants/tutorial001_an_py311.py!}</code></p>
             <p>////</p>
             <p>/////</p>
@@ -177,7 +177,7 @@ def test_all_variants_ln_hl_title():
             ////
             //// tab | Python 3.8+</p>
             <p><code>python title="main.py"
-            {!docs_src/all_variants/tutorial001_an.py!}</code>
+            {!docs_src/all_variants/tutorial001_an_py38.py!}</code>
             ////
             //// tab | Python 3.11+ - non-Annotated</p>
             <p>/// tip</p>
@@ -205,7 +205,7 @@ def test_all_variants_ln_hl_title():
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
             <p>///</p>
             <p><code>python title="main.py"
-            {!docs_src/all_variants/tutorial001.py!}</code>
+            {!docs_src/all_variants/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """
@@ -243,7 +243,7 @@ def test_all_variants_ln_hl_include():
             </code></pre></div></p>
             <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.11+</p>
+            <p>//// tab | Python 3.11+
             <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 1"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 2"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 3"</span><span class="p">)</span>
@@ -254,7 +254,7 @@ def test_all_variants_ln_hl_include():
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 8"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 9"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 10"</span><span class="p">)</span>
-            </code></pre></div>
+            </code></pre></div></p>
             <p>////</p>
             <p>/////</p>
             <p>///// details | 🤓 Other versions and variants</p>
@@ -397,7 +397,7 @@ def test_all_variants_ln_hl_title_include():
             </code></pre></div></p>
             <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.11+</p>
+            <p>//// tab | Python 3.11+
             <div class="highlight"><span class="filename">main.py</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 1"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 2"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 3"</span><span class="p">)</span>
@@ -408,7 +408,7 @@ def test_all_variants_ln_hl_title_include():
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 8"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 9"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"an py311 line 10"</span><span class="p">)</span>
-            </code></pre></div>
+            </code></pre></div></p>
             <p>////</p>
             <p>/////</p>
             <p>///// details | 🤓 Other versions and variants</p>

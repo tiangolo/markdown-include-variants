@@ -23,10 +23,8 @@ def test_only_preview():
         inspect.cleandoc(
             """
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
