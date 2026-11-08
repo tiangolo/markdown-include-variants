@@ -32,7 +32,7 @@ def test_all_variants_plain():
             ////
             //// tab | Python 3.8+</p>
             <p><code>python
-            {!docs_src/all_variants/tutorial001_an.py!}</code>
+            {!docs_src/all_variants/tutorial001_an_py38.py!}</code>
             ////
             //// tab | Python 3.11+ - non-Annotated</p>
             <p>/// tip</p>
@@ -60,7 +60,7 @@ def test_all_variants_plain():
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
             <p>///</p>
             <p><code>python
-            {!docs_src/all_variants/tutorial001.py!}</code>
+            {!docs_src/all_variants/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """

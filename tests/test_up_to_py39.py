@@ -24,7 +24,7 @@ def test_all_variants_plain():
             <p>///// details | 🤓 Other versions and variants</p>
             <p>//// tab | Python 3.8+</p>
             <p><code>python
-            {!docs_src/up_to_py39/tutorial001_an.py!}</code>
+            {!docs_src/up_to_py39/tutorial001_an_py38.py!}</code>
             ////
             //// tab | Python 3.9+ - non-Annotated</p>
             <p>/// tip</p>
@@ -38,7 +38,7 @@ def test_all_variants_plain():
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
             <p>///</p>
             <p><code>python
-            {!docs_src/up_to_py39/tutorial001.py!}</code>
+            {!docs_src/up_to_py39/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """
@@ -65,15 +65,15 @@ def test_all_variants_ln_hl():
             <p>```</p>
             <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.9+</p>
-            <p><code>python hl_lines="4-5"
+            <p>//// tab | Python 3.9+
+            <code>python hl_lines="4-5"
             {!docs_src/up_to_py39/tutorial001_an_py39.py!}</code></p>
             <p>////</p>
             <p>/////</p>
             <p>///// details | 🤓 Other versions and variants</p>
             <p>//// tab | Python 3.8+</p>
             <p><code>python
-            {!docs_src/up_to_py39/tutorial001_an.py!}</code>
+            {!docs_src/up_to_py39/tutorial001_an_py38.py!}</code>
             ////
             //// tab | Python 3.9+ - non-Annotated</p>
             <p>/// tip</p>
@@ -87,7 +87,7 @@ def test_all_variants_ln_hl():
             <p>Prefer to use the <code>Annotated</code> version if possible.</p>
             <p>///</p>
             <p><code>python
-            {!docs_src/up_to_py39/tutorial001.py!}</code>
+            {!docs_src/up_to_py39/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """

@@ -1,198 +1,121 @@
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any
 
 from markdown import Extension, Markdown
 from markdown.preprocessors import Preprocessor
 
-AN = "_an"
-PY39 = "_py39"
-PY310 = "_py310"
-PY311 = "_py311"
-
-SUFFIXES_TO_REMOVE = ["_an", "_py39", "_py310", "_py311"]
+re_variant_suffix = re.compile(r"(_non_an|_an)?(?:_py([1-9])(0|[1-9][0-9]*))?$")
 
 
 @dataclass(frozen=True)
 class Variant:
     path: Path
-    title: str
+    # None is the default format, True is the legacy _an marker, and False
+    # identifies a non-Annotated variant.
     is_annotated: bool | None
-    version: Literal["py38", "py39", "py310", "py311"]
+    version: tuple[int, int] | None
+
+    @property
+    def title(self) -> str:
+        parts = []
+        if self.version is not None:
+            major, minor = self.version
+            parts.append(f"Python {major}.{minor}+")
+        if self.is_annotated is False:
+            parts.append("non-Annotated")
+        return " - ".join(parts)
 
 
-def remove_suffixes(base_name: str, suffixes: list[str]) -> str:
-    for suffix in suffixes:
-        if base_name.endswith(suffix):
-            base_name = base_name[: -len(suffix)]
-            return remove_suffixes(base_name, suffixes)
-    return base_name
+def parse_variant_name(
+    name: str,
+) -> tuple[str, bool | None, tuple[int, int] | None]:
+    match = re_variant_suffix.search(name)
+    assert match is not None
+    version = None
+    if match[2] is not None:
+        version = (int(match[2]), int(match[3]))
+    is_annotated = None
+    if match[1] is not None:
+        is_annotated = match[1] == "_an"
+    return name[: match.start()], is_annotated, version
 
 
-def calculate_variants(base_path: Path) -> dict[tuple[str, bool | None], Variant]:
-    preferred_name = base_path.stem
-    base_name = remove_suffixes(preferred_name, SUFFIXES_TO_REMOVE)
-    base_dir = base_path.parent
+def calculate_variants(base_path: Path) -> list[Variant]:
+    if not base_path.is_file():
+        raise FileNotFoundError(f"Included file does not exist: {base_path}")
 
-    an_p311_path = base_dir / f"{base_name}{AN}{PY311}.py"
-    an_p310_path = base_dir / f"{base_name}{AN}{PY310}.py"
-    an_p39_path = base_dir / f"{base_name}{AN}{PY39}.py"
-    an_p38_path = base_dir / f"{base_name}{AN}.py"
-    p311_path = base_dir / f"{base_name}{PY311}.py"
-    p310_path = base_dir / f"{base_name}{PY310}.py"
-    p39_path = base_dir / f"{base_name}{PY39}.py"
-    p38_path = base_dir / f"{base_name}.py"
-
-    return _create_variants(
-        an_p311_path=an_p311_path,
-        an_p310_path=an_p310_path,
-        an_p39_path=an_p39_path,
-        an_p38_path=an_p38_path,
-        p311_path=p311_path,
-        p310_path=p310_path,
-        p39_path=p39_path,
-        p38_path=p38_path,
-    )
-
-
-def calculate_variants_folder(
-    base_path: Path,
-) -> dict[tuple[str, bool | None], Variant]:
-    file_name = base_path.name
-    folder = base_path.parent
-    base_dir = folder.parent
-    base_name = remove_suffixes(folder.name, SUFFIXES_TO_REMOVE)
-
-    an_p311_path = base_dir / f"{base_name}{AN}{PY311}" / file_name
-    an_p310_path = base_dir / f"{base_name}{AN}{PY310}" / file_name
-    an_p39_path = base_dir / f"{base_name}{AN}{PY39}" / file_name
-    an_p38_path = base_dir / f"{base_name}{AN}" / file_name
-    p311_path = base_dir / f"{base_name}{PY311}" / file_name
-    p310_path = base_dir / f"{base_name}{PY310}" / file_name
-    p39_path = base_dir / f"{base_name}{PY39}" / file_name
-    p38_path = base_dir / f"{base_name}" / file_name
-
-    return _create_variants(
-        an_p311_path=an_p311_path,
-        an_p310_path=an_p310_path,
-        an_p39_path=an_p39_path,
-        an_p38_path=an_p38_path,
-        p311_path=p311_path,
-        p310_path=p310_path,
-        p39_path=p39_path,
-        p38_path=p38_path,
-    )
-
-
-def _create_variants(
-    an_p311_path: Path,
-    an_p310_path: Path,
-    an_p39_path: Path,
-    an_p38_path: Path,
-    p311_path: Path,
-    p310_path: Path,
-    p39_path: Path,
-    p38_path: Path,
-) -> dict[tuple[str, bool | None], Variant]:
-    variants: dict[tuple[str, bool | None], Variant] = {}
-    if an_p311_path.exists():
-        v = Variant(
-            path=an_p311_path,
-            title="Python 3.11+",
-            is_annotated=True,
-            version="py311",
-        )
-        variants[(v.version, v.is_annotated)] = v
-        if p311_path.exists():
-            v = Variant(
-                path=p311_path,
-                title="Python 3.11+ - non-Annotated",
-                is_annotated=False,
-                version="py311",
+    # Look for filename variants first, then variants of the nearest containing
+    # directory. Keep the relative path inside directory variants, including
+    # nested files such as app_non_an/routers/items.py.
+    for variant_path in (base_path, *base_path.parents):
+        if not variant_path.name:
+            break
+        is_file = variant_path == base_path
+        name = variant_path.stem if is_file else variant_path.name
+        base_name, is_annotated, version = parse_variant_name(name)
+        variants = []
+        for sibling in variant_path.parent.iterdir():
+            if is_file:
+                if sibling.suffix != base_path.suffix:
+                    continue
+                sibling_name = sibling.stem
+                source_path = sibling
+            else:
+                sibling_name = sibling.name
+                source_path = sibling / base_path.relative_to(variant_path)
+            sibling_base, sibling_annotated, sibling_version = parse_variant_name(
+                sibling_name
             )
-            variants[(v.version, v.is_annotated)] = v
-    elif p311_path.exists():
-        v = Variant(
-            path=p311_path,
-            title="Python 3.11+",
-            is_annotated=None,
-            version="py311",
-        )
-        variants[(v.version, v.is_annotated)] = v
-    if an_p310_path.exists():
-        v = Variant(
-            path=an_p310_path,
-            title="Python 3.10+",
-            is_annotated=True,
-            version="py310",
-        )
-        variants[(v.version, v.is_annotated)] = v
-        if p310_path.exists():
-            v = Variant(
-                path=p310_path,
-                title="Python 3.10+ - non-Annotated",
-                is_annotated=False,
-                version="py310",
+            if sibling_base == base_name and source_path.is_file():
+                variants.append(
+                    Variant(
+                        path=source_path,
+                        is_annotated=sibling_annotated,
+                        version=sibling_version,
+                    )
+                )
+        if len(variants) > 1 or is_annotated is not None or version is not None:
+            annotations = {variant.is_annotated for variant in variants}
+            if True in annotations and False in annotations:
+                raise ValueError(
+                    f"Cannot mix legacy _an and _non_an variants for {base_path}. "
+                    "Migrate the whole example family to _non_an together."
+                )
+            versions = {variant.version for variant in variants}
+            if None in versions and len(versions) > 1:
+                raise ValueError(
+                    f"Cannot mix versioned and unversioned variants for {base_path}. "
+                    "Add a Python version suffix to every variant, or remove all "
+                    "Python version suffixes."
+                )
+            # In the legacy convention, the bare counterpart of an _an file
+            # is non-Annotated. Keep that interpretation for each Python version.
+            legacy_versions = {
+                variant.version for variant in variants if variant.is_annotated is True
+            }
+            variants = [
+                replace(variant, is_annotated=False)
+                if variant.is_annotated is None and variant.version in legacy_versions
+                else variant
+                for variant in variants
+            ]
+            return sorted(
+                variants,
+                key=lambda variant: (
+                    variant.is_annotated is not False,
+                    variant.version or (0, 0),
+                ),
+                reverse=True,
             )
-            variants[(v.version, v.is_annotated)] = v
-    elif p310_path.exists():
-        v = Variant(
-            path=p310_path,
-            title="Python 3.10+",
-            is_annotated=None,
-            version="py310",
-        )
-        variants[(v.version, v.is_annotated)] = v
-    if an_p39_path.exists():
-        v = Variant(
-            path=an_p39_path,
-            title="Python 3.9+",
-            is_annotated=True,
-            version="py39",
-        )
-        variants[(v.version, v.is_annotated)] = v
-        if p39_path.exists():
-            v = Variant(
-                path=p39_path,
-                title="Python 3.9+ - non-Annotated",
-                is_annotated=False,
-                version="py39",
-            )
-            variants[(v.version, v.is_annotated)] = v
-    elif p39_path.exists():
-        v = Variant(
-            path=p39_path,
-            title="Python 3.9+",
-            is_annotated=None,
-            version="py39",
-        )
-        variants[(v.version, v.is_annotated)] = v
-    if an_p38_path.exists():
-        v = Variant(
-            path=an_p38_path,
-            title="Python 3.8+",
-            is_annotated=True,
-            version="py38",
-        )
-        variants[(v.version, v.is_annotated)] = v
-        if p38_path.exists():
-            v = Variant(
-                path=p38_path,
-                title="Python 3.8+ - non-Annotated",
-                is_annotated=False,
-                version="py38",
-            )
-            variants[(v.version, v.is_annotated)] = v
-    elif p38_path.exists():
-        v = Variant(
-            path=p38_path,
-            title="Python 3.8+",
-            is_annotated=None,
-            version="py38",
-        )
-        variants[(v.version, v.is_annotated)] = v
-    return variants
+    return [Variant(path=base_path, is_annotated=None, version=None)]
+
+
+def wrap_tab(lines: list[str], title: str) -> list[str]:
+    if title:
+        return [f"//// tab | {title}", *lines, "", "////", ""]
+    return [*lines, ""]
 
 
 def parse_lines_index(include_lines_config: str) -> list[tuple[int, int]]:
@@ -302,32 +225,9 @@ class IncludeVariantsPreprocessor(Preprocessor):
             use_hl_lines_str = generate_hl_string(use_hl_lines)
 
             variants = calculate_variants(base_path)
-            if len(variants) == 0:
-                raise FileNotFoundError(f"Could not find any variants for {base_path}")
-            if len(variants) == 1:
-                folder_variants = calculate_variants_folder(base_path)
-                if len(folder_variants) > 1:
-                    variants = folder_variants
-                elif len(folder_variants) == 1:
-                    file_variant_is_default = variants.get(("py38", None)) is not None
-                    folder_variant_is_default = (
-                        folder_variants.get(("py38", None)) is not None
-                    )
-                    # File name doesn't contain any suffixes, but folder does - use variants from folder
-                    if file_variant_is_default and not folder_variant_is_default:
-                        variants = folder_variants
-            sorted_variants: list[Variant] = []
-            preferred_variant = None
-            for an in [True, False, None]:
-                for version in ["py311", "py310", "py39", "py38"]:
-                    v = variants.get((version, an))
-                    if v:
-                        if v.path == base_path:
-                            assert preferred_variant is None
-                            preferred_variant = v
-                        else:
-                            sorted_variants.append(v)
-            assert preferred_variant is not None
+            preferred_variant = next(v for v in variants if v.path == base_path)
+            sorted_variants = [v for v in variants if v.path != base_path]
+            preferred_title = preferred_variant.title
             content_lines = preferred_variant.path.read_text().splitlines()
 
             internal_block_lines: list[str] = []
@@ -371,15 +271,10 @@ class IncludeVariantsPreprocessor(Preprocessor):
                     first_line += f' title="{title}"'
 
                 block_lines.extend(
-                    [
-                        f"//// tab | {preferred_variant.title}",
-                        first_line,
-                        *internal_block_lines,
-                        "```",
-                        "",
-                        "////",
-                        "",
-                    ]
+                    wrap_tab(
+                        [first_line, *internal_block_lines, "```"],
+                        preferred_title,
+                    )
                 )
             if include_lines:
                 first_line_full = "```python"
@@ -392,14 +287,14 @@ class IncludeVariantsPreprocessor(Preprocessor):
                     [
                         "///// details | 👀 Full file preview",
                         "",
-                        f"//// tab | {preferred_variant.title}",
-                        "",
-                        first_line_full,
-                        f"{{!{preferred_variant.path}!}}",
-                        "```",
-                        "",
-                        "////",
-                        "",
+                        *wrap_tab(
+                            [
+                                first_line_full,
+                                f"{{!{preferred_variant.path}!}}",
+                                "```",
+                            ],
+                            preferred_title,
+                        ),
                         "/////",
                         "",
                     ]
@@ -416,7 +311,8 @@ class IncludeVariantsPreprocessor(Preprocessor):
                 )
 
                 for variant in sorted_variants:
-                    block_lines.extend([f"//// tab | {variant.title}", ""])
+                    if variant.title:
+                        block_lines.extend([f"//// tab | {variant.title}", ""])
                     if variant.is_annotated is False:
                         block_lines.extend(
                             [
@@ -434,9 +330,10 @@ class IncludeVariantsPreprocessor(Preprocessor):
                             first_line_variant,
                             f"{{!{variant.path}!}}",
                             "```",
-                            "////",
                         ]
                     )
+                    if variant.title:
+                        block_lines.append("////")
 
                 block_lines.extend(
                     [

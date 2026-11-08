@@ -23,10 +23,8 @@ def test_simple_hl():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python hl_lines="1-3"
+            <p><code>python hl_lines="1-3"
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
@@ -49,8 +47,7 @@ def test_simple_hl_include():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python hl_lines="1-3"
+            <p>```python hl_lines="1-3"
             print("simple line 1")
             print("simple line 2")
             print("simple line 3")
@@ -62,7 +59,6 @@ def test_simple_hl_include():
             print("simple line 9")
             print("simple line 10")</p>
             <p>```</p>
-            <p>////</p>
             """
         )
     )
@@ -84,10 +80,8 @@ def test_simple_hl_one():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python hl_lines="2"
+            <p><code>python hl_lines="2"
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
@@ -109,10 +103,8 @@ def test_simple_hl_one_middle():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python hl_lines="2 5"
+            <p><code>python hl_lines="2 5"
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
@@ -134,10 +126,8 @@ def test_simple_hl_one_block_middle_end():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python hl_lines="2 5-8 10"
+            <p><code>python hl_lines="2 5-8 10"
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
