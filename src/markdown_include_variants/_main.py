@@ -1,7 +1,7 @@
 import re
 from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Any, Union
+from typing import Any
 
 from markdown import Extension, Markdown
 from markdown.preprocessors import Preprocessor
@@ -14,8 +14,8 @@ class Variant:
     path: Path
     # None is the default format, True is the legacy _an marker, and False
     # identifies a non-Annotated variant.
-    is_annotated: Union[bool, None]
-    version: Union[tuple[int, int], None]
+    is_annotated: bool | None
+    version: tuple[int, int] | None
 
     @property
     def title(self) -> str:
@@ -30,7 +30,7 @@ class Variant:
 
 def parse_variant_name(
     name: str,
-) -> tuple[str, Union[bool, None], Union[tuple[int, int], None]]:
+) -> tuple[str, bool | None, tuple[int, int] | None]:
     match = re_variant_suffix.search(name)
     assert match is not None
     version = None
@@ -202,7 +202,7 @@ class IncludeVariantsPreprocessor(Preprocessor):
             configs_str = line_match.group(2).strip()
             include_lines: list[tuple[int, int]] = []
             highlight_lines: list[tuple[int, int]] = []
-            title: Union[str, None] = None
+            title: str | None = None
             for config_match in re.finditer(re_config, configs_str):
                 if config_match:
                     name = config_match.group(1)

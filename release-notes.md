@@ -2,6 +2,12 @@
 
 ## Latest Changes
 
+## 0.0.9 (2026-11-08)
+
+### Breaking Changes
+
+* 💥 Drop support for Python 3.9. PR [#116](https://github.com/tiangolo/markdown-include-variants/pull/116) by [@tiangolo](https://github.com/tiangolo).
+
 ### Docs
 
 * 🎨 Enable Ruff formatting for Python in Markdown. PR [#112](https://github.com/tiangolo/markdown-include-variants/pull/112) by [@tiangolo](https://github.com/tiangolo).
