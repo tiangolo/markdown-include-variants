@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Breaking Changes
+
+* ✨ Add unversioned snippets and `_non_an` variants. PR [#115](https://github.com/tiangolo/markdown-include-variants/pull/115) by [@tiangolo](https://github.com/tiangolo).
+
 ## 0.0.9 (2026-11-08)
 
 ### Breaking Changes
