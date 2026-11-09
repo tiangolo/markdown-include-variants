@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* ⬆️ Use latest-known uv and upgrade GitHub Actions. PR [#114](https://github.com/tiangolo/markdown-include-variants/pull/114) by [@dependabot[bot]](https://github.com/apps/dependabot).
+
 ## 0.0.10 (2026-11-08)
 
 ### Breaking Changes
