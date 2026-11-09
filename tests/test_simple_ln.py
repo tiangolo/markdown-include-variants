@@ -24,17 +24,13 @@ def test_simple_ln():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-3]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -59,16 +55,13 @@ def test_simple_ln_include():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
             <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 1"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 2"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 3"</span><span class="p">)</span>
 
             <span class="c1"># Code below omitted 👇</span>
-            </code></pre></div></p>
-            <p>////</p>
+            </code></pre></div>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 1"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 2"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 3"</span><span class="p">)</span>
@@ -80,7 +73,6 @@ def test_simple_ln_include():
             <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 9"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"simple line 10"</span><span class="p">)</span>
             </code></pre></div>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -101,17 +93,13 @@ def test_simple_ln_one():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-1]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -132,14 +120,11 @@ def test_simple_ln_one_include():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             print("simple line 1")</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p>```python
             print("simple line 1")
             print("simple line 2")
@@ -152,7 +137,6 @@ def test_simple_ln_one_include():
             print("simple line 9")
             print("simple line 10")</p>
             <p>```</p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -173,18 +157,14 @@ def test_simple_ln_one_below():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python</p>
+            <p>```python</p>
             <h1>Code above omitted 👆</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:3-3]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -205,17 +185,13 @@ def test_simple_ln_one_last():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python</p>
+            <p>```python</p>
             <h1>Code above omitted 👆</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:10-10]!}
             ```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -236,18 +212,14 @@ def test_simple_ln_block_below():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python</p>
+            <p>```python</p>
             <h1>Code above omitted 👆</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:2-4]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -268,17 +240,13 @@ def test_simple_ln_block_last():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python</p>
+            <p>```python</p>
             <h1>Code above omitted 👆</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:8-10]!}
             ```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -299,19 +267,15 @@ def test_simple_ln_first_middle():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-1]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:3-3]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -332,20 +296,16 @@ def test_simple_ln_first_middle_last():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-1]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:3-3]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:10-10]!}
             ```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -366,20 +326,16 @@ def test_simple_ln_middle_middle():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python</p>
+            <p>```python</p>
             <h1>Code above omitted 👆</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:3-3]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:8-8]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -400,19 +356,15 @@ def test_simple_ln_first_block_middle_block():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-3]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:5-7]!}</p>
             <h1>Code below omitted 👇</h1>
             <p>```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -433,20 +385,16 @@ def test_simple_ln_first_block_middle_block_last_block():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-3]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:5-7]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:9-10]!}
             ```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -467,20 +415,16 @@ def test_simple_ln_first_block_middle_last_block():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-3]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:5-5]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:9-10]!}
             ```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )
@@ -501,20 +445,16 @@ def test_simple_ln_first_middle_block_last():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             {!docs_src/simple/tutorial001.py[ln:1-1]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:5-7]!}</p>
             <h1>Code here omitted 👈</h1>
             <p>{!docs_src/simple/tutorial001.py[ln:10-10]!}
             ```</p>
-            <p>////</p>
             <p>///// details | 👀 Full file preview</p>
-            <p>//// tab | Python 3.8+</p>
             <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             <p>/////</p>
             """
         )

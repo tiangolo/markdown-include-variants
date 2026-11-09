@@ -54,23 +54,44 @@ The other configs are for the extensions that actually render the output, this e
 
 ### Workflow
 
-* You add a Python source example to the `docs_src` directory, with the minimum Python version supported by the project, and using the old format without `Annotated`, if that applies, it would be named something like `tutorial001.py`.
-* Copy the file and update it to use `Annotated` (if that applies), and name the file with a "tag" (a prefix) of `_an`, like: `tutorial001_an.py`.
-* Run the internal script to generate the variants of the files for superior versions of Python, like `3.9`, `3.10`, etc. (this internal script is in the project itself). This would generate files like `tutorial001_py39.py`, `tutorial001_py310.py`, etc. and `tutorial001_an_py39.py`, `tutorial001_an_py310.py`, etc.
+* You add a Python source example to the `docs_src` directory, with the minimum Python version supported by the project, and using `Annotated` where applicable, named something like `tutorial001.py`.
+* If a non-Annotated alternative is useful, copy the file and name it with the suffix `_non_an`, like: `tutorial001_non_an.py`.
+* If an example needs alternatives for different Python versions, give every variant an explicit Python version suffix, like `tutorial001_py311.py`, `tutorial001_py312.py`, and `tutorial001_non_an_py312.py`.
 * In the Markdown file, include the preferred version of the file, using this syntax:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001_an_py310.py *}
+{* ./docs_src/first_steps/tutorial001.py *}
 ```
 
 That will be automatically expanded with [mdx-include](https://github.com/neurobin/mdx_include) to include the other variants below in a collapsed `details` box.
+
+### Variant Names
+
+| Filename | Display |
+| --- | --- |
+| `tutorial001.py` | Code block |
+| `tutorial001_non_an.py` | non-Annotated |
+| `tutorial001_py312.py` | Python 3.12+ |
+| `tutorial001_non_an_py312.py` | Python 3.12+ - non-Annotated |
+
+Examples without a version suffix target the project's supported Python versions. An explicit version suffix keeps its label even for a single file. Every variant of the same example must either have a Python version suffix or be unversioned.
+
+### Directory Variants
+
+For examples spanning multiple files, use the same suffixes on directories, such as `app` and `app_non_an`:
+
+```markdown
+{* ./docs_src/bigger_applications/app/routers/items.py title["app/routers/items.py"] *}
+```
+
+The extension finds the same relative file in each directory variant, including nested files. Use `title` to display a filename above the code block.
 
 ### Include Lines
 
 To include specific line ranges, use the config `ln`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001_an_py310.py ln[3:6,8,10:11] *}
+{* ./docs_src/first_steps/tutorial001.py ln[3:6,8,10:11] *}
 ```
 
 That will include only:
@@ -92,7 +113,7 @@ If you include specific lines, it will also add another collapsed `details` box 
 You can highlight specific lines using the config `hl`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001_an_py310.py hl[3,5:7,10] *}
+{* ./docs_src/first_steps/tutorial001.py hl[3,5:7,10] *}
 ```
 
 That will highlight:
@@ -101,19 +122,19 @@ That will highlight:
 * lines 5 to 7
 * line 10
 
-Have in mind that the file path points to the simplest version of the file, the one without the `_an` suffix. But the main file shown will be the highest (recommended) version, and the highlights will apply to that file.
+Have in mind that the main file shown will be the one named in the include, and the highlights will apply to that file.
 
-So, when deciding which lines to highlight, do that based on the highest version of the file.
+So, when deciding which lines to highlight, do that based on the file you include.
 
 ### Include Lines and Highlight
 
 You can combine both `ln` and `hl`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001_an_py310.py ln[3:6,8,10:11] hl[3,5:6,10] *}
+{* ./docs_src/first_steps/tutorial001.py ln[3:6,8,10:11] hl[3,5:6,10] *}
 ```
 
-The highlighted lines refer to the source file (for the highest/recommended version), not the final rendered code block.
+The highlighted lines refer to the source file (for the included version), not the final rendered code block.
 
 This makes it easier to decide which lines to highlight just by opening the source file, without having to calculate the actual lines in the rendered block after included, the extra lines for comments when omitting lines, etc.
 
@@ -134,7 +155,7 @@ print("line 7")
 Using a declaration like this:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001_an_py310.py ln[5:7] hl[6] *}
+{* ./docs_src/first_steps/tutorial001.py ln[5:7] hl[6] *}
 ```
 
 Could render something like:
@@ -154,10 +175,25 @@ Notice that the comment above adds 2 extra lines, and only the desired lines are
 If you only want to generate the "File Preview" collapsed details section, without actually including a tab of source files, you can use `ln[0]`:
 
 ```markdown
-{* ./docs_src/first_steps/tutorial001_an_py310.py ln[0] *}
+{* ./docs_src/first_steps/tutorial001.py ln[0] *}
 ```
 
 This is useful for example at the beginning of a new page, in a recap of the last used file in the previous page.
+
+### Migrating Existing Examples
+
+Legacy `_an` names still work: `tutorial001_an.py` is recommended and its bare counterpart, `tutorial001.py`, is non-Annotated. This also applies to directory variants and pairs with matching Python versions.
+
+Rename both sides of a pair together:
+
+| Existing filename | New filename |
+| --- | --- |
+| `tutorial001_py310.py` | `tutorial001_non_an.py` |
+| `tutorial001_an_py310.py` | `tutorial001.py` |
+
+Keep explicit versions where alternatives still need them. Use `_py38` for files previously relying on the implicit Python 3.8 version.
+
+Update includes, test imports, configuration, and scripts to match. Each example family must use either the legacy `_an` convention or the new `_non_an` convention.
 
 ## License
 

@@ -32,7 +32,7 @@ def test_all_variants_plain():
             ////
             //// tab | Python 3.8+</p>
             <p><code>python
-            {!docs_src/only_py_no_an/tutorial001.py!}</code>
+            {!docs_src/only_py_no_an/tutorial001_py38.py!}</code>
             ////</p>
             <p>/////</p>
             """

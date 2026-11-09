@@ -19,10 +19,8 @@ def test_simple():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python
+            <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
@@ -39,10 +37,8 @@ def test_simple_space():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python
+            <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
@@ -59,10 +55,8 @@ def test_simple_extra_space():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            <code>python
+            <p><code>python
             {!docs_src/simple/tutorial001.py!}</code></p>
-            <p>////</p>
             """
         )
     )
@@ -81,8 +75,7 @@ def test_simple_include():
     assert result == snapshot(
         inspect.cleandoc(
             """
-            <p>//// tab | Python 3.8+
-            ```python
+            <p>```python
             print("simple line 1")
             print("simple line 2")
             print("simple line 3")
@@ -94,7 +87,6 @@ def test_simple_include():
             print("simple line 9")
             print("simple line 10")</p>
             <p>```</p>
-            <p>////</p>
             """
         )
     )
