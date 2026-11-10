@@ -17,11 +17,20 @@ jobs:
       matrix:
         python-version:
           - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+          - "3.14"
+          - "3.15"
+          - "3.15t"
         uv-resolution:
           - highest
-          - lowest-direct
+        include:
+          - python-version: "3.10"
+            uv-resolution: lowest-direct
       fail-fast: false
     env:
+      UV_PYTHON: ${{ matrix.python-version }}
       UV_RESOLUTION: ${{ matrix.uv-resolution }}
     steps:
       - name: Dump GitHub context
@@ -40,6 +49,21 @@ jobs:
           version: "latest-known"
       - name: Install Dependencies
         run: uv sync
+      - name: Check free-threaded imports
+        if: endsWith(matrix.python-version, 't')
+        run: |
+          uv run python - <<'PY'
+          import sys
+          import sysconfig
+
+          assert sysconfig.get_config_var("Py_GIL_DISABLED") == 1
+          assert not sys._is_gil_enabled()
+
+          import coverage.tracer
+          import markdown_include_variants
+
+          assert not sys._is_gil_enabled()
+          PY
       - run: mkdir coverage
       - name: Test
         run: uv run bash scripts/test.sh
