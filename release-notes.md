@@ -4,6 +4,7 @@
 
 ### Internal
 
+* 💥 Drop support for Python 3.10. PR [#120](https://github.com/tiangolo/markdown-include-variants/pull/120) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Use latest-known uv and upgrade GitHub Actions. PR [#114](https://github.com/tiangolo/markdown-include-variants/pull/114) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 0.0.10 (2026-11-08)
