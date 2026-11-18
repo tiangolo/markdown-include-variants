@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.0.11 (2026-11-18)
+
 ### Internal
 
 * 💥 Drop support for Python 3.10. PR [#120](https://github.com/tiangolo/markdown-include-variants/pull/120) by [@tiangolo](https://github.com/tiangolo).
