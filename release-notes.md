@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* 🔒️ Generate GH actions workflow lockfile and bump Zizmor. PR [#122](https://github.com/tiangolo/markdown-include-variants/pull/122) by [@YuriiMotov](https://github.com/YuriiMotov).
+
 ## 0.0.11 (2026-11-18)
 
 ### Internal
